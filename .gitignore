@@ -1,0 +1,30 @@
+# Dependency trees — managed from root only
+node_modules/
+
+# Sub-package install artifacts — these should never exist
+# If you see these, run `npm install` from the repo root, not from inside a sub-package
+domain-google-ads/node_modules/
+adapters/beacon/node_modules/
+apps/mcp-office/node_modules/
+domain-google-ads/package-lock.json
+adapters/beacon/package-lock.json
+apps/mcp-office/package-lock.json
+
+# Root lockfile is intentionally committed — do not add it here
+# package-lock.json
+
+# Next.js build output
+.next/
+
+# Raw MCC export CSVs — sensitive account data, not committed
+data/mcc-export/source/
+
+# Runtime SQLite databases — never commit live operational data
+**/*.sqlite
+**/*.sqlite-shm
+**/*.sqlite-wal
+
+# OS / editor noise
+.DS_Store
+.env
+*.local

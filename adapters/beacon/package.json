@@ -1,0 +1,12 @@
+{
+  "name": "@mktg/adapter-beacon",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Beacon-specific adapter: brief rules, push control, and prompt builders consuming @mktg/core and @mktg/domain-google-ads.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@mktg/core": "file:../../",
+    "@mktg/domain-google-ads": "file:../../domain-google-ads"
+  }
+}

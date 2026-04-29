@@ -1,0 +1,6 @@
+# Everything is excluded by default; only the pre-built standalone bundle is needed.
+# CI assembles the bundle before running docker build, so only that output is sent.
+**
+
+# Include the assembled standalone output.
+!.next/standalone/**

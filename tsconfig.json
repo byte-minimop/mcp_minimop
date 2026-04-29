@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": ["node"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@mktg/core": ["./src/index.ts"],
+      "@mktg/domain-google-ads": ["./domain-google-ads/src/index.ts"],
+      "@mktg/adapter-beacon": ["./adapters/beacon/src/index.ts"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "domain-google-ads/src/**/*.ts",
+    "adapters/beacon/src/**/*.ts"
+  ]
+}

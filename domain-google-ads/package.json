@@ -1,0 +1,11 @@
+{
+  "name": "@mktg/domain-google-ads",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Google Ads domain intelligence: campaign families, readiness, audience mapping, sitelinks, and Concentrix GA-specific context.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@mktg/core": "file:../"
+  }
+}
