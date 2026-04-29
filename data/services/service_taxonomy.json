@@ -1,0 +1,1013 @@
+{
+  "_meta": {
+    "source": "Concentrix Service Catalogue",
+    "issue_date": "August 5, 2024",
+    "extracted_for": "Beacon inference and service normalization",
+    "categories_count": 4,
+    "groups_count": 20,
+    "offerings_count": 73
+  },
+  "categories": [
+    {
+      "service_category": "Strategy & Design",
+      "category_id": "SD",
+      "short_description": "Shaping experiences, strategies, and operations with human-centered design and tech-led innovation",
+      "service_groups": [
+        {
+          "service_group": "Business Transformation",
+          "group_id": "SD-BT",
+          "short_description": "Improving performance and driving value with business transformation consulting",
+          "service_offerings": [
+            {
+              "service_offering": "Operating Model Design",
+              "offering_id": "SD-BT-OMD",
+              "short_description": "Ensuring every element of an operating model is designed and configured to optimize outcomes—combining the best of human and machine capabilities for future-ready service operations",
+              "sub_offerings": ["Service Operations Design", "Digital-First Operating Model", "AI Readiness & Roadmap"],
+              "likely_use_cases": [
+                "Redesigning operations post-merger",
+                "Reducing end-to-end processing time",
+                "Shifting to digital-first operating models",
+                "AI readiness assessment"
+              ],
+              "likely_industries": ["BFSI", "Healthcare", "BPO", "Professional Services"]
+            },
+            {
+              "service_offering": "Organizational Change",
+              "offering_id": "SD-BT-OC",
+              "short_description": "Providing expert guidance and hands-on support for business change, helping clients achieve their objectives across journeys, processes, operating models, people, and tech",
+              "sub_offerings": ["Change Management", "Program & Project Delivery", "Culture Change & Communications"],
+              "likely_use_cases": [
+                "Managing large-scale workforce change",
+                "Merger integration",
+                "Culture transformation programs",
+                "Operational recovery and cost reduction"
+              ],
+              "likely_industries": ["BFSI", "Facilities Management", "Retail & Ecommerce"]
+            },
+            {
+              "service_offering": "Organizational Excellence",
+              "offering_id": "SD-BT-OE",
+              "short_description": "From focused interventions to ambitious global programs, equipping clients with the skills and confidence to embrace agile ways of working and drive lasting change",
+              "sub_offerings": ["Leadership Development", "Capability Building & Coaching", "Accredited Training"],
+              "likely_use_cases": [
+                "Driving operational efficiency at global scale",
+                "Building agile capability",
+                "Post-merger operational redesign",
+                "Cost-base reduction programs"
+              ],
+              "likely_industries": ["BFSI", "Insurance"]
+            },
+            {
+              "service_offering": "Process Automation",
+              "offering_id": "SD-BT-PA",
+              "short_description": "Mapping, designing, and reengineering processes and workflows, identifying where automation can eliminate inefficiencies, waste, and rework",
+              "sub_offerings": ["Opportunity Assessment", "Business Case Development", "Process Design & Optimization", "Technology Requirements & Selection", "Implementation & Benefit Realization"],
+              "likely_use_cases": [
+                "Automating administrative processes",
+                "RPA and intelligent automation",
+                "Legacy system transformation",
+                "Operational cost reduction"
+              ],
+              "likely_industries": ["Professional Services", "BFSI", "Healthcare"]
+            }
+          ]
+        },
+        {
+          "service_group": "Experience Design",
+          "group_id": "SD-ED",
+          "short_description": "Designing digital experiences to infuse growth and profitability in every interaction",
+          "service_offerings": [
+            {
+              "service_offering": "Customer Experience Design",
+              "offering_id": "SD-ED-CXD",
+              "short_description": "Designing contact and channel strategies to maximize customer interactions, delivering seamless experiences throughout each journey to enhance value, satisfaction, and loyalty",
+              "sub_offerings": ["Customer Insights", "Customer Engagement", "CX Strategy"],
+              "likely_use_cases": [
+                "Redesigning digital customer journeys",
+                "Cost-to-serve reduction",
+                "Omnichannel experience strategy",
+                "CX maturity improvement"
+              ],
+              "likely_industries": ["Retail & Ecommerce", "BFSI", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Employee Experience Design",
+              "offering_id": "SD-ED-EXD",
+              "short_description": "Creating a work environment and culture equipped with digital systems and tools to inspire, assist, and connect with employees for greater wellness, engagement, and retention",
+              "sub_offerings": ["Employee Wellness", "Employee Engagement", "Employee Feedback & Surveys"],
+              "likely_use_cases": [
+                "Workforce digital enablement",
+                "Employee retention improvement",
+                "Hybrid work design",
+                "Agent experience transformation"
+              ],
+              "likely_industries": ["Technology & Consumer Electronics", "BFSI", "Retail & Ecommerce"]
+            },
+            {
+              "service_offering": "User Experience Design",
+              "offering_id": "SD-ED-UXD",
+              "short_description": "From user research, persona development, and application flows to UI design, prototyping and design ops, ensuring highly usable solutions that delight users",
+              "sub_offerings": ["UX Evaluation", "UX Strategy", "UX Design", "UX Ops"],
+              "likely_use_cases": [
+                "App and portal UX redesign",
+                "Mobile-first design",
+                "Accessibility and usability",
+                "Design system creation"
+              ],
+              "likely_industries": ["Healthcare", "Retail & Ecommerce", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Partner Experience Design",
+              "offering_id": "SD-ED-PXD",
+              "short_description": "Maximizing a client's success with channel partners with digital tools and platforms that enhance the journeys, interactions, and experiences their partners have with their business",
+              "sub_offerings": ["Partner Insights", "Partner Engagement", "Partner Strategy"],
+              "likely_use_cases": [
+                "Partner portal design and automation",
+                "Dealer/franchise experience improvement",
+                "B2B partner onboarding"
+              ],
+              "likely_industries": ["Retail & Ecommerce", "Industrial Products", "Automotive"]
+            },
+            {
+              "service_offering": "Brand Experience Design",
+              "offering_id": "SD-ED-BXD",
+              "short_description": "Shaping a brand's strategy, vision, identity, and positioning with compelling narrative and content that creates meaning and value in the minds of customers and employees",
+              "sub_offerings": ["Experience Vision", "Brand Manifestation"],
+              "likely_use_cases": [
+                "Post-acquisition brand alignment",
+                "Customer attrition reduction through brand",
+                "Digital brand strategy",
+                "Brand experience localization"
+              ],
+              "likely_industries": ["BFSI", "Retail & Ecommerce"]
+            },
+            {
+              "service_offering": "Behavioral Science",
+              "offering_id": "SD-ED-BS",
+              "short_description": "Embedding an understanding of the factors influencing human decision-making into experiences and communications to nudge people towards positive behavioral change",
+              "sub_offerings": ["Adoption Strategy", "Journey Optimization", "Communication"],
+              "likely_use_cases": [
+                "Digital channel adoption",
+                "Reducing contact center volume",
+                "Financial behavior change",
+                "Compliance nudging"
+              ],
+              "likely_industries": ["BFSI", "Healthcare"]
+            }
+          ]
+        },
+        {
+          "service_group": "Digital Innovation",
+          "group_id": "SD-DI",
+          "short_description": "Innovative thinking to stay ahead in the ever-changing digital world",
+          "service_offerings": [
+            {
+              "service_offering": "Generative AI",
+              "offering_id": "SD-DI-GAI",
+              "short_description": "Assessing client readiness to deploy enterprise-scale generative AI solutions, developing strategic action plans, and implementing solutions that balance risk and innovation",
+              "sub_offerings": ["Assessment & Roadmap", "Front-Office Strategy", "Back-Office Strategy", "Governance", "Service Design"],
+              "likely_use_cases": [
+                "Gen AI strategy and readiness assessment",
+                "AI-powered product development",
+                "Developer productivity with gen AI",
+                "Telehealth and healthcare AI portals"
+              ],
+              "likely_industries": ["Healthcare", "Technology & Consumer Electronics", "BFSI"]
+            },
+            {
+              "service_offering": "Mobility",
+              "offering_id": "SD-DI-MOB",
+              "short_description": "Ideating, strategizing, and creating engaging mobile experiences that meet customers and employees where they are, achieving greater efficiency, engagement, and brand alignment",
+              "sub_offerings": ["Performance Analysis", "Strategy & Roadmap", "Creative Design"],
+              "likely_use_cases": [
+                "Mobile app experience redesign",
+                "Mobile conversion optimization",
+                "Ecommerce mobile-first strategy"
+              ],
+              "likely_industries": ["Retail & Ecommerce", "Education", "Healthcare"]
+            },
+            {
+              "service_offering": "Product & Service Innovation",
+              "offering_id": "SD-DI-PSI",
+              "short_description": "Reimagining products and services through digital innovation, discovering new possibilities to transform processes, designing products and services to delight customers and increase market competitiveness",
+              "sub_offerings": ["Performance Analysis", "Strategy & Roadmap", "Management", "Agile Coaching"],
+              "likely_use_cases": [
+                "New product ideation and design",
+                "Digital product transformation",
+                "Service model reinvention"
+              ],
+              "likely_industries": ["Healthcare", "Technology & Consumer Electronics", "Industrial Products"]
+            },
+            {
+              "service_offering": "Emerging Tech",
+              "offering_id": "SD-DI-ET",
+              "short_description": "Unlocking the value of the connected world, with technology such as AR/VR, IoT, wearables, and blockchain, to revolutionize and redefine product offerings",
+              "sub_offerings": ["Immersive", "Blockchain", "Metaverse", "IoT"],
+              "likely_use_cases": [
+                "IoT-enabled product experiences",
+                "AR/VR customer engagement",
+                "Blockchain for supply chain or compliance"
+              ],
+              "likely_industries": ["Industrial Products", "Retail & Ecommerce", "Technology & Consumer Electronics"]
+            }
+          ]
+        },
+        {
+          "service_group": "Lifecycle Engagement",
+          "group_id": "SD-LE",
+          "short_description": "Enabling strategies and driving meaningful engagement throughout the customer relationship",
+          "service_offerings": [
+            {
+              "service_offering": "Digital Marketing",
+              "offering_id": "SD-LE-DM",
+              "short_description": "Full-service digital agency services to expand online presence, increase market reach and drive revenue",
+              "sub_offerings": ["Digital Marketing Strategy & Transformation", "Content Strategy", "Content Creative, Operations & Production", "Content Visibility [SEO]"],
+              "likely_use_cases": [
+                "SEO and content strategy",
+                "Digital campaign management",
+                "Brand digital presence growth",
+                "Integrated marketing operations"
+              ],
+              "likely_industries": ["Retail & Ecommerce", "Technology & Consumer Electronics", "Automotive"]
+            },
+            {
+              "service_offering": "Digital Selling",
+              "offering_id": "SD-LE-DS",
+              "short_description": "Modernizing selling by equipping B2B sales teams with the right digital tools and content to personalize the buyer's journey and improve prospect engagement",
+              "sub_offerings": ["Conversion Intelligence", "Sales Engagement", "Sales Orchestration", "Sales Tech Stack Assessment"],
+              "likely_use_cases": [
+                "B2B sales enablement",
+                "Buyer journey personalization",
+                "Sales tech modernization"
+              ],
+              "likely_industries": ["Technology & Consumer Electronics", "BFSI"]
+            },
+            {
+              "service_offering": "Customer Loyalty",
+              "offering_id": "SD-LE-CL",
+              "short_description": "Reimagining customer relationships and engagement throughout the customer lifecycle to create a comprehensive vision and strategy for driving customer loyalty",
+              "sub_offerings": ["Customer Intelligence", "Customer Value Proposition", "Omnichannel Personalization", "Human-Centered Experience Design", "MarTech Transformation"],
+              "likely_use_cases": [
+                "Loyalty program design and management",
+                "Customer retention strategy",
+                "Personalization at scale",
+                "Omnichannel loyalty engagement"
+              ],
+              "likely_industries": ["Retail & Ecommerce", "BFSI", "Media & Communications"]
+            },
+            {
+              "service_offering": "Lifetime Value",
+              "offering_id": "SD-LE-LTV",
+              "short_description": "Deploying a strategy to maximize customer lifetime spend, shaped by customer insights and journey analytics, enabling relevant and timely interactions with meaningful value",
+              "sub_offerings": ["Lifetime Spend Analysis", "Customer Lifecycle Strategy", "Channel & Touchpoint Strategy", "Journey Orchestration & Design", "Content Strategy & Production"],
+              "likely_use_cases": [
+                "CLV modeling and optimization",
+                "Cross-sell and upsell strategy",
+                "Customer lifecycle orchestration"
+              ],
+              "likely_industries": ["BFSI", "Retail & Ecommerce", "Media & Communications"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "service_category": "Data & Analytics",
+      "category_id": "DA",
+      "short_description": "Harnessing data and AI to power transformation, optimization, and innovation throughout the enterprise",
+      "service_groups": [
+        {
+          "service_group": "Data & Analytics Transformation",
+          "group_id": "DA-DAT",
+          "short_description": "Accelerating data and analytics maturity with modern strategies, practices and technologies",
+          "service_offerings": [
+            {
+              "service_offering": "Data Value Realization",
+              "offering_id": "DA-DAT-DVR",
+              "short_description": "Realizing tangible business value from data investments through structured strategy and governance",
+              "sub_offerings": ["Value Realization"],
+              "likely_use_cases": ["Data strategy ROI", "Data monetization", "Analytics value measurement"],
+              "likely_industries": ["Healthcare", "BFSI", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Data Governance",
+              "offering_id": "DA-DAT-DG",
+              "short_description": "Establishing policies, processes, and standards to ensure data quality, consistency, and compliance across the enterprise",
+              "sub_offerings": ["Data Governance"],
+              "likely_use_cases": ["Regulatory compliance", "Data quality improvement", "Master data management"],
+              "likely_industries": ["Retail & Ecommerce", "Technology & Consumer Electronics", "BFSI"]
+            },
+            {
+              "service_offering": "Data Literacy",
+              "offering_id": "DA-DAT-DL",
+              "short_description": "Building organizational capability to understand, interpret, and use data effectively at all levels",
+              "sub_offerings": ["Data Literacy"],
+              "likely_use_cases": ["Workforce data upskilling", "Analytics adoption", "Self-serve analytics enablement"],
+              "likely_industries": ["Automotive", "Manufacturing", "Healthcare"]
+            },
+            {
+              "service_offering": "AI/ML Acceleration",
+              "offering_id": "DA-DAT-AIML",
+              "short_description": "Fast-tracking AI and ML capability development with modern strategies and implementation support",
+              "sub_offerings": ["AI/ML Acceleration", "Data Mesh Instantiation"],
+              "likely_use_cases": ["AI strategy", "ML platform setup", "Data mesh architecture"],
+              "likely_industries": ["Technology & Consumer Electronics", "BFSI", "Healthcare"]
+            },
+            {
+              "service_offering": "Insight Activation",
+              "offering_id": "DA-DAT-IA",
+              "short_description": "Converting raw data and analytics outputs into actionable insights embedded in business processes and decisions",
+              "sub_offerings": ["Insight Activation"],
+              "likely_use_cases": ["Business intelligence rollout", "Analytics democratization", "Data-driven decision culture"],
+              "likely_industries": ["Automotive", "Retail & Ecommerce", "BFSI"]
+            }
+          ]
+        },
+        {
+          "service_group": "Data Engineering",
+          "group_id": "DA-DE",
+          "short_description": "Establishing a modern, agile ecosystem powered by cloud and AI technologies to become a data-driven enterprise",
+          "service_offerings": [
+            {
+              "service_offering": "Data Modernization",
+              "offering_id": "DA-DE-DM",
+              "short_description": "Enhancing and improving data-related technologies, practices, and infrastructure to meet current and future business needs, encompassing AI use cases, data accessibility, quality, security, and analytics capabilities",
+              "sub_offerings": ["Data Modernization"],
+              "likely_use_cases": ["Cloud data migration", "Data lake/warehouse modernization", "Legacy data system replacement"],
+              "likely_industries": ["Healthcare", "BFSI", "Media & Communications"]
+            },
+            {
+              "service_offering": "Pipeline Engineering",
+              "offering_id": "DA-DE-PE",
+              "short_description": "Optimizing data workflows to ensure quality and security, accelerating the delivery of data-driven insights, combining data management, integration, quality, and governance with DevOps principles",
+              "sub_offerings": ["Pipeline Engineering"],
+              "likely_use_cases": ["ETL/ELT modernization", "Real-time data streaming", "Data integration across systems"],
+              "likely_industries": ["Healthcare", "Technology & Consumer Electronics", "BFSI"]
+            },
+            {
+              "service_offering": "AI Data Readiness",
+              "offering_id": "DA-DE-ADR",
+              "short_description": "Overcoming data challenges related to AI and generative AI deployments, ensuring data is gathered, organized, and flowing in a way that works efficiently with LLMs and other AI types",
+              "sub_offerings": ["AI Data Readiness"],
+              "likely_use_cases": ["LLM data preparation", "AI-ready data infrastructure", "Generative AI data strategy"],
+              "likely_industries": ["Technology & Consumer Electronics", "Healthcare", "BFSI"]
+            }
+          ]
+        },
+        {
+          "service_group": "Advanced Analytics",
+          "group_id": "DA-AA",
+          "short_description": "AI-powered solutions leveraging diverse data sources for quicker, more informed decision-making",
+          "service_offerings": [
+            {
+              "service_offering": "ML Ops",
+              "offering_id": "DA-AA-MLO",
+              "short_description": "Operationalizing machine learning models at scale with continuous monitoring and improvement workflows",
+              "sub_offerings": ["ML Ops"],
+              "likely_use_cases": ["Model deployment and monitoring", "ML pipeline automation", "AI governance"],
+              "likely_industries": ["Technology & Consumer Electronics", "BFSI", "Healthcare"]
+            },
+            {
+              "service_offering": "Marketing Analytics",
+              "offering_id": "DA-AA-MA",
+              "short_description": "Data-driven analytics to measure, optimize, and improve marketing performance across channels",
+              "sub_offerings": ["Marketing Analytics"],
+              "likely_use_cases": ["Campaign performance analysis", "Attribution modeling", "Customer segment analysis"],
+              "likely_industries": ["Retail & Ecommerce", "Media & Communications", "Automotive"]
+            },
+            {
+              "service_offering": "Predictive NPS",
+              "offering_id": "DA-AA-PNPS",
+              "short_description": "Using predictive analytics to anticipate customer satisfaction and loyalty scores before they are measured",
+              "sub_offerings": ["Predictive NPS"],
+              "likely_use_cases": ["Churn prediction", "Proactive service recovery", "CX improvement prioritization"],
+              "likely_industries": ["Media & Communications", "BFSI", "Healthcare"]
+            }
+          ]
+        },
+        {
+          "service_group": "Enterprise Intelligence",
+          "group_id": "DA-EI",
+          "short_description": "Infusing AI-powered enterprise business intelligence across all levels of the organization",
+          "service_offerings": [
+            {
+              "service_offering": "Human-Centered Business Intelligence",
+              "offering_id": "DA-EI-HCBI",
+              "short_description": "Defining human behavior chains driving business actions and combining them with key business events to redesign reporting and analytics tools for accelerated adoption",
+              "sub_offerings": ["Human-Centered BI"],
+              "likely_use_cases": ["BI adoption improvement", "Executive dashboard redesign", "Analytics UX"],
+              "likely_industries": ["BFSI", "Technology & Consumer Electronics", "Retail & Ecommerce"]
+            },
+            {
+              "service_offering": "Embedded Business Intelligence",
+              "offering_id": "DA-EI-EBI",
+              "short_description": "Allowing employees to access and interact with enterprise business intelligence tools within the context of their everyday workflows, without switching between different applications",
+              "sub_offerings": ["Embedded BI"],
+              "likely_use_cases": ["Workflow-embedded analytics", "Real-time operational data", "In-app intelligence"],
+              "likely_industries": ["Technology & Consumer Electronics", "BFSI"]
+            },
+            {
+              "service_offering": "Generative AI for Intelligence",
+              "offering_id": "DA-EI-GAII",
+              "short_description": "Empowering teams with generative AI technology to interact with and interrogate data effortlessly using natural language, unlocking insights at a faster pace and on a larger scale",
+              "sub_offerings": ["Generative AI"],
+              "likely_use_cases": ["Natural language data querying", "Conversational BI", "AI-assisted reporting"],
+              "likely_industries": ["BFSI", "Technology & Consumer Electronics", "Healthcare"]
+            }
+          ]
+        },
+        {
+          "service_group": "Operational Insights",
+          "group_id": "DA-OI",
+          "short_description": "Operational consulting to maximize value from frontline operations and front- to back-office processes",
+          "service_offerings": [
+            {
+              "service_offering": "Contact Center Analytics",
+              "offering_id": "DA-OI-CCA",
+              "short_description": "Analytics to improve contact center performance, efficiency, and customer experience outcomes",
+              "sub_offerings": ["Contact Center Analytics"],
+              "likely_use_cases": ["Call center performance improvement", "Handle time reduction", "Agent effectiveness analytics"],
+              "likely_industries": ["BFSI", "Technology & Consumer Electronics", "Media & Communications"]
+            },
+            {
+              "service_offering": "Process Intelligence & Optimization",
+              "offering_id": "DA-OI-PIO",
+              "short_description": "Using process mining and analytics to identify inefficiencies and opportunities for optimization across operational workflows",
+              "sub_offerings": ["Process Intelligence & Optimization"],
+              "likely_use_cases": ["Process mining", "Operational bottleneck identification", "Automation opportunity sizing"],
+              "likely_industries": ["BFSI", "Healthcare", "Retail & Ecommerce"]
+            },
+            {
+              "service_offering": "Speech & Text Analytics",
+              "offering_id": "DA-OI-STA",
+              "short_description": "Mining voice and text interactions to surface customer and operational insights",
+              "sub_offerings": ["Speech & Text Analytics"],
+              "likely_use_cases": ["Call reason analysis", "Compliance monitoring", "Customer sentiment analysis"],
+              "likely_industries": ["BFSI", "Healthcare", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "WFM Analytics",
+              "offering_id": "DA-OI-WFMA",
+              "short_description": "Data-driven workforce management analytics to optimize scheduling, capacity, and operational efficiency",
+              "sub_offerings": ["WFM Analytics"],
+              "likely_use_cases": ["Capacity planning", "Schedule optimization analytics", "Workforce cost modeling"],
+              "likely_industries": ["BFSI", "Healthcare", "Retail & Ecommerce"]
+            }
+          ]
+        },
+        {
+          "service_group": "Industry & Domain Solutions",
+          "group_id": "DA-IDS",
+          "short_description": "Purpose-built solutions with accelerators and frameworks to speed up problem-solving for distinct business needs",
+          "service_offerings": [
+            {
+              "service_offering": "Sales & Revenue Analytics",
+              "offering_id": "DA-IDS-SRA",
+              "short_description": "Increasing sales conversions, revenue, and customer satisfaction with hyper-personalization by collecting and evaluating data across channels",
+              "sub_offerings": ["Sales & Revenue Analytics"],
+              "likely_use_cases": ["Revenue optimization", "Sales funnel analytics", "Hyper-personalization"],
+              "likely_industries": ["Retail & Ecommerce", "Technology & Consumer Electronics", "BFSI"]
+            },
+            {
+              "service_offering": "Collections Analytics",
+              "offering_id": "DA-IDS-CA",
+              "short_description": "Assessing customer behavior, preferences, and associated risks, building AI/ML solutions to enhance collection performance and optimize customer outreach cost",
+              "sub_offerings": ["Collections Analytics"],
+              "likely_use_cases": ["Debt collection optimization", "Credit risk modeling", "Customer contact strategy"],
+              "likely_industries": ["BFSI"]
+            },
+            {
+              "service_offering": "Payment Integrity",
+              "offering_id": "DA-IDS-PI",
+              "short_description": "Ensuring correct payments to payees and providers promptly with a technology-driven analytics engine blending advanced AI and ML to enhance accuracy and minimize fraud",
+              "sub_offerings": ["Payment Integrity"],
+              "likely_use_cases": ["Claims overpayment detection", "Healthcare payment accuracy", "Fraud prevention"],
+              "likely_industries": ["Healthcare", "BFSI"]
+            },
+            {
+              "service_offering": "Social Media Analytics",
+              "offering_id": "DA-IDS-SMA",
+              "short_description": "Creating insights to better understand customer behaviors and preferences, build brand equity, improve campaign performance, manage online reputation, and gain sustainable competitive edge",
+              "sub_offerings": ["Social Media Analytics"],
+              "likely_use_cases": ["Brand monitoring", "Campaign performance", "Social listening"],
+              "likely_industries": ["Retail & Ecommerce", "Media & Communications", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Compliance Analytics",
+              "offering_id": "DA-IDS-COMP",
+              "short_description": "Leveraging generative AI and a natural language UI to provide a complete view of opportunities and risks, enhancing visibility into legal document portfolios and facilitating stakeholder access",
+              "sub_offerings": ["Compliance Analytics"],
+              "likely_use_cases": ["Regulatory risk analytics", "Legal document review", "Compliance reporting"],
+              "likely_industries": ["BFSI", "Healthcare", "Professional Services"]
+            },
+            {
+              "service_offering": "Digital Analytics",
+              "offering_id": "DA-IDS-DA",
+              "short_description": "Gaining insights into how customers interact with digital channels, identifying behavioral patterns to guide digital experience improvements and deliver personalized ecommerce",
+              "sub_offerings": ["Digital Analytics"],
+              "likely_use_cases": ["Website behavior analysis", "Conversion rate optimization", "Digital channel personalization"],
+              "likely_industries": ["Retail & Ecommerce", "Media & Communications", "BFSI"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "service_category": "Enterprise Technology",
+      "category_id": "ET",
+      "short_description": "Engineering, modernizing, and integrating technologies for enhanced efficiency and next-gen experiences",
+      "service_groups": [
+        {
+          "service_group": "Technology Transformation",
+          "group_id": "ET-TT",
+          "short_description": "Technology consulting solutions to transform the business",
+          "service_offerings": [
+            {
+              "service_offering": "Tech Advisory",
+              "offering_id": "ET-TT-TA",
+              "short_description": "From strategic visioning and roadmapping to governance and architecture, helping evolve, improve, and ensure the suitability and future-readiness of the client's IT landscape",
+              "sub_offerings": ["Tech Advisory"],
+              "likely_use_cases": ["IT strategy and roadmap", "Technology governance", "Architecture review"],
+              "likely_industries": ["Healthcare", "BFSI", "Media & Communications"]
+            },
+            {
+              "service_offering": "Tech Modernization",
+              "offering_id": "ET-TT-TM",
+              "short_description": "Modernizing technology infrastructure to address critical business challenges, upskilling teams to enhance efficiency, performance, and innovation",
+              "sub_offerings": ["Tech Modernization"],
+              "likely_use_cases": ["Legacy system modernization", "Infrastructure upgrade", "Technology stack transformation"],
+              "likely_industries": ["Healthcare", "Technology & Consumer Electronics", "Media & Communications"]
+            },
+            {
+              "service_offering": "Cloud Strategy",
+              "offering_id": "ET-TT-CS",
+              "short_description": "Defining the ideal cloud strategy to take advantage of breakthrough technologies, scale rapidly, and seize opportunities for value creation and resilience",
+              "sub_offerings": ["Cloud Strategy"],
+              "likely_use_cases": ["Cloud migration strategy", "Multi-cloud architecture", "Cloud cost optimization"],
+              "likely_industries": ["BFSI", "Healthcare", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "MarTech Strategy",
+              "offering_id": "ET-TT-MTS",
+              "short_description": "Creating well-crafted MarTech strategies using innovative technology to enhance customer engagement, streamline marketing operations, and drive better outcomes",
+              "sub_offerings": ["MarTech Strategy"],
+              "likely_use_cases": ["Marketing tech stack assessment", "CDP strategy", "Marketing automation"],
+              "likely_industries": ["Retail & Ecommerce", "BFSI", "Media & Communications"]
+            },
+            {
+              "service_offering": "CX Technology Strategy",
+              "offering_id": "ET-TT-CXTS",
+              "short_description": "Leveraging deep expertise in driving CX outcomes for leading brands, building a tech roadmap to optimize omnichannel experiences, customer satisfaction and loyalty",
+              "sub_offerings": ["CX Technology Strategy"],
+              "likely_use_cases": ["Contact center technology roadmap", "Omnichannel platform strategy", "CX platform evaluation"],
+              "likely_industries": ["BFSI", "Retail & Ecommerce", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Next-Gen Developer Experience",
+              "offering_id": "ET-TT-NGDE",
+              "short_description": "Improving workflows, developer productivity and code quality, and accelerating delivery through cutting-edge technologies, AI, automation and intuitive interfaces",
+              "sub_offerings": ["Next-Gen Dev Experience"],
+              "likely_use_cases": ["Developer tooling and AI assistance", "DevOps modernization", "Engineering velocity improvement"],
+              "likely_industries": ["Technology & Consumer Electronics", "BFSI"]
+            }
+          ]
+        },
+        {
+          "service_group": "Application Services",
+          "group_id": "ET-AS",
+          "short_description": "Engineering and delivering modern applications, integrations, and AI-powered solutions",
+          "service_offerings": [
+            {
+              "service_offering": "Architecture Design",
+              "offering_id": "ET-AS-AD",
+              "short_description": "Designing scalable, resilient technology architectures aligned with business goals",
+              "sub_offerings": ["Architecture Design"],
+              "likely_use_cases": ["Microservices architecture", "Cloud-native design", "System integration architecture"],
+              "likely_industries": ["Automotive", "BFSI", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Application Modernization",
+              "offering_id": "ET-AS-AM",
+              "short_description": "Transforming legacy applications to modern, cloud-native platforms for improved performance, agility, and user experience",
+              "sub_offerings": ["Application Modernization"],
+              "likely_use_cases": ["Legacy app replatforming", "Microservices migration", "App containerization"],
+              "likely_industries": ["Media & Communications", "Healthcare", "BFSI"]
+            },
+            {
+              "service_offering": "AI Engineering",
+              "offering_id": "ET-AS-AIE",
+              "short_description": "Designing, building, and deploying AI-powered applications and models to solve complex business challenges",
+              "sub_offerings": ["AI Engineering"],
+              "likely_use_cases": ["AI model development", "Intelligent automation", "NLP and computer vision solutions"],
+              "likely_industries": ["Healthcare", "Technology & Consumer Electronics", "BFSI"]
+            },
+            {
+              "service_offering": "Custom App Development",
+              "offering_id": "ET-AS-CAD",
+              "short_description": "Building tailored software applications designed to meet specific client needs, from concept to launch",
+              "sub_offerings": ["Custom App Development"],
+              "likely_use_cases": ["Bespoke software development", "Internal tool development", "Consumer-facing app creation"],
+              "likely_industries": ["Retail & Ecommerce", "Healthcare", "Media & Communications"]
+            },
+            {
+              "service_offering": "API & Integration",
+              "offering_id": "ET-AS-API",
+              "short_description": "Connecting systems, applications, and data sources through modern API strategies and integration platforms",
+              "sub_offerings": ["API & Integration"],
+              "likely_use_cases": ["System integration", "API management", "Middleware modernization"],
+              "likely_industries": ["Media & Communications", "BFSI", "Healthcare"]
+            },
+            {
+              "service_offering": "DevSecOps",
+              "offering_id": "ET-AS-DSO",
+              "short_description": "Integrating development, security, and operations practices to accelerate delivery while maintaining security and quality",
+              "sub_offerings": ["DevSecOps"],
+              "likely_use_cases": ["Product-centric delivery transformation", "CI/CD pipeline implementation", "Shift-left security"],
+              "likely_industries": ["Travel & Transportation", "Technology & Consumer Electronics"]
+            }
+          ]
+        },
+        {
+          "service_group": "Enterprise Automation",
+          "group_id": "ET-EA",
+          "short_description": "Automating enterprise processes and customer interactions to reduce costs and improve efficiency",
+          "service_offerings": [
+            {
+              "service_offering": "Process Automation (Tech)",
+              "offering_id": "ET-EA-PA",
+              "short_description": "Implementing RPA, intelligent automation, and AI-driven workflow automation to streamline enterprise operations",
+              "sub_offerings": ["Process Automation"],
+              "likely_use_cases": ["RPA implementation", "Intelligent document processing", "Back-office automation"],
+              "likely_industries": ["Healthcare", "Retail & Ecommerce", "BFSI"]
+            },
+            {
+              "service_offering": "Conversation Automation",
+              "offering_id": "ET-EA-CA",
+              "short_description": "Automating customer and employee conversations across channels using AI-powered bots and natural language processing",
+              "sub_offerings": ["Conversation Automation"],
+              "likely_use_cases": ["Chatbot and voicebot deployment", "IVR modernization", "Conversational AI"],
+              "likely_industries": ["Retail & Ecommerce", "BFSI", "Healthcare"]
+            }
+          ]
+        },
+        {
+          "service_group": "Experience Platforms",
+          "group_id": "ET-EP",
+          "short_description": "Helping brands maximize value from their digital platforms with human-centered design, proven best practices, and tried-and-true expertise",
+          "service_offerings": [
+            {
+              "service_offering": "Salesforce",
+              "offering_id": "ET-EP-SF",
+              "short_description": "Enhancing journeys with matured sales models, marketing automation, B2B and B2C ecommerce, customer experience platform, service, customer data platform, and many industry-specific solutions",
+              "sub_offerings": ["Salesforce"],
+              "likely_use_cases": ["Salesforce implementation", "CRM transformation", "Sales cloud optimization", "Marketing cloud setup"],
+              "likely_industries": ["Healthcare", "Technology & Consumer Electronics", "Media & Communications", "Industrial Products"]
+            },
+            {
+              "service_offering": "Adobe",
+              "offering_id": "ET-EP-AD",
+              "short_description": "Leveraging Adobe Experience Cloud expertise to create personalized touchpoints across channels for effortless engagement while gaining deep insights into customer behaviors",
+              "sub_offerings": ["Adobe"],
+              "likely_use_cases": ["Adobe AEM implementation", "Adobe Analytics", "Adobe Campaign", "Adobe Target personalization"],
+              "likely_industries": ["Manufacturing", "BFSI", "Retail & Ecommerce"]
+            },
+            {
+              "service_offering": "Sitecore",
+              "offering_id": "ET-EP-SC",
+              "short_description": "Optimizing Sitecore Experience Platforms with end-to-end expertise, delivering seamless connectivity and transformative results at enterprise-scale",
+              "sub_offerings": ["Sitecore"],
+              "likely_use_cases": ["Sitecore CMS implementation", "Digital experience platform", "Personalization at scale"],
+              "likely_industries": ["Healthcare", "Retail & Ecommerce", "BFSI"]
+            },
+            {
+              "service_offering": "Commerce",
+              "offering_id": "ET-EP-COM",
+              "short_description": "Harnessing the true power of ecommerce to create exceptional omnichannel customer journey experiences, integrating workflows across marketing and service",
+              "sub_offerings": ["Commerce"],
+              "likely_use_cases": ["Ecommerce platform build", "Omnichannel commerce", "Headless commerce"],
+              "likely_industries": ["Retail & Ecommerce", "BFSI", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "MarTech (Platform)",
+              "offering_id": "ET-EP-MTP",
+              "short_description": "Addressing specific business challenges with a platform-agnostic MarTech strategy and roadmap aimed at modernizing marketing operations and driving performance",
+              "sub_offerings": ["MarTech"],
+              "likely_use_cases": ["MarTech stack consolidation", "CDP selection and deployment", "Marketing automation platform"],
+              "likely_industries": ["Retail & Ecommerce", "Media & Communications", "BFSI"]
+            }
+          ]
+        },
+        {
+          "service_group": "Testing Services",
+          "group_id": "ET-TS",
+          "short_description": "Accelerating development cycles and time-to-market with comprehensive software testing services",
+          "service_offerings": [
+            {
+              "service_offering": "AI Model Testing",
+              "offering_id": "ET-TS-AMT",
+              "short_description": "Ensuring the accuracy, reliability, and performance of AI models—identifying and mitigating biases, enhancing model interpretability for user trust, improved decision-making, and business outcomes",
+              "sub_offerings": ["AI Model Testing"],
+              "likely_use_cases": ["ML model validation", "AI bias detection", "Model performance benchmarking"],
+              "likely_industries": ["Healthcare", "Technology & Consumer Electronics", "BFSI"]
+            },
+            {
+              "service_offering": "Experience Assurance",
+              "offering_id": "ET-TS-EA",
+              "short_description": "Securing the delivery of high-quality digital products and seamless touchpoint experiences by continuously monitoring outcomes against experience standards",
+              "sub_offerings": ["Experience Assurance"],
+              "likely_use_cases": ["End-to-end digital QA", "Customer journey testing", "Accessibility testing"],
+              "likely_industries": ["Media & Communications", "Healthcare", "Retail & Ecommerce"]
+            },
+            {
+              "service_offering": "Performance Testing",
+              "offering_id": "ET-TS-PT",
+              "short_description": "Assessing the speed, responsiveness, scalability, and stability of software applications to optimize performance and reliability",
+              "sub_offerings": ["Performance Testing"],
+              "likely_use_cases": ["Load testing", "Stress testing", "Scalability validation"],
+              "likely_industries": ["Retail & Ecommerce", "Media & Communications", "Healthcare"]
+            },
+            {
+              "service_offering": "Security Testing",
+              "offering_id": "ET-TS-ST",
+              "short_description": "Strengthening digital defense capabilities by leveraging penetration testing, vulnerability scanning, and code review to proactively identify and address security flaws",
+              "sub_offerings": ["Security Testing"],
+              "likely_use_cases": ["Penetration testing", "Vulnerability assessment", "Secure code review"],
+              "likely_industries": ["BFSI", "Healthcare", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Chaos Engineering",
+              "offering_id": "ET-TS-CE",
+              "short_description": "Performing experiments to reveal weaknesses, vulnerabilities, and failure points, building resilient products and systems capable of withstanding unexpected disruptions",
+              "sub_offerings": ["Chaos Engineering"],
+              "likely_use_cases": ["Resilience testing", "Failure mode analysis", "Site reliability engineering"],
+              "likely_industries": ["Technology & Consumer Electronics", "Media & Communications"]
+            }
+          ]
+        },
+        {
+          "service_group": "CX Technology",
+          "group_id": "ET-CXT",
+          "short_description": "Agile, scalable CX technology solutions to drive business outcomes and ongoing success",
+          "service_offerings": [
+            {
+              "service_offering": "Cloud Contact Center (CCaaS)",
+              "offering_id": "ET-CXT-CCaaS",
+              "short_description": "Combining cloud technologies with expertise to design, build, and run integrated contact center operations optimized for business success [AWS, Avaya, Genesys, NICE]",
+              "sub_offerings": ["Strategy & Design", "Intelligent Routing", "Digital & Voice", "Conversational AI", "Self-Service Automation", "Integration"],
+              "likely_use_cases": ["Contact center cloud migration", "CCaaS platform implementation", "Omnichannel contact center"],
+              "likely_industries": ["BFSI", "Retail & Ecommerce", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Self-Service AI Bots",
+              "offering_id": "ET-CXT-SAB",
+              "short_description": "Transforming customer journeys with AI-powered technologies delivering efficient and personalized experiences simulating human-like conversations across every touchpoint",
+              "sub_offerings": ["AI Strategy & Roadmap", "Customer Analytics", "Conversational Design", "AI Platform", "AI Bot Training", "Bot Optimization"],
+              "likely_use_cases": ["Chatbot and voicebot", "IVR containment improvement", "AI self-service"],
+              "likely_industries": ["BFSI", "Retail & Ecommerce", "Healthcare"]
+            },
+            {
+              "service_offering": "Business Messaging",
+              "offering_id": "ET-CXT-BM",
+              "short_description": "Allowing customers to connect with a brand at their convenience and preferred messaging channels, with AI bots and AI-guided advisors, for 24/7 personalized experiences",
+              "sub_offerings": ["Messaging Strategy & Roadmap", "Customer Analytics", "Automation Studio", "AI Bot Training"],
+              "likely_use_cases": ["WhatsApp/Apple Business Chat deployment", "Asynchronous messaging", "Messaging channel strategy"],
+              "likely_industries": ["Retail & Ecommerce", "BFSI", "Media & Communications"]
+            },
+            {
+              "service_offering": "Voice of the Customer (CXT)",
+              "offering_id": "ET-CXT-VOC",
+              "short_description": "Turning customer feedback into action with an integrated VOC platform and services offering—helping brands design, build, and run their VOC programs",
+              "sub_offerings": ["Modern Listening", "Analytics & Gen AI", "Automated Actions", "Experience Management"],
+              "likely_use_cases": ["Customer feedback platform", "NPS program management", "CSAT analytics"],
+              "likely_industries": ["BFSI", "Technology & Consumer Electronics", "Retail & Ecommerce"]
+            }
+          ]
+        },
+        {
+          "service_group": "Cybersecurity",
+          "group_id": "ET-CYB",
+          "short_description": "Bolstering the enterprise's defenses with an automation-first, AI-driven security operations center",
+          "service_offerings": [
+            {
+              "service_offering": "AI-Driven 24/7 Security Operations",
+              "offering_id": "ET-CYB-SOC",
+              "short_description": "Protecting assets and ensuring peace of mind with robust 24/7 cybersecurity operations, providing continuous monitoring and rapid threat response",
+              "sub_offerings": ["24/7 AI-driven security"],
+              "likely_use_cases": ["Managed SOC", "Threat detection and response", "Security monitoring"],
+              "likely_industries": ["BFSI", "Healthcare", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Endpoint & User Security",
+              "offering_id": "ET-CYB-EUS",
+              "short_description": "Preventing unauthorized access, detecting and responding to security threats, and ensuring confidentiality, integrity, and availability of data",
+              "sub_offerings": ["End point protection"],
+              "likely_use_cases": ["Endpoint detection and response", "Identity access management", "Zero trust implementation"],
+              "likely_industries": ["BFSI", "Technology & Consumer Electronics", "Healthcare"]
+            },
+            {
+              "service_offering": "Cloud Security",
+              "offering_id": "ET-CYB-CLS",
+              "short_description": "Enhancing cloud security with comprehensive services, ensuring data integrity and protection against evolving digital threats",
+              "sub_offerings": ["Cloud workload protection"],
+              "likely_use_cases": ["Cloud security posture management", "Cloud data protection", "Security for cloud migrations"],
+              "likely_industries": ["Technology & Consumer Electronics", "BFSI", "Healthcare"]
+            },
+            {
+              "service_offering": "Network Security",
+              "offering_id": "ET-CYB-NS",
+              "short_description": "Securing network infrastructure with advanced threat detection, real-time monitoring, and proactive defenses for uninterrupted operations",
+              "sub_offerings": ["Firewalls/WAF"],
+              "likely_use_cases": ["Network monitoring", "Firewall management", "DDoS protection"],
+              "likely_industries": ["BFSI", "Technology & Consumer Electronics", "Media & Communications"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "service_category": "Digital Operations",
+      "category_id": "DO",
+      "short_description": "Combining expert knowledge, cutting-edge technologies, and distinct operating models to solve specific business challenges",
+      "service_groups": [
+        {
+          "service_group": "Marketing",
+          "group_id": "DO-MKT",
+          "short_description": "Effective strategies, content and tools to reach and engage target audiences, grow sales, enhance experiences and build loyalty",
+          "service_offerings": [
+            {
+              "service_offering": "Performance Marketing",
+              "offering_id": "DO-MKT-PM",
+              "short_description": "Providing automotive OEMs and dealers with a full-service omnichannel campaign service powered by Salesforce, with complete agency managed services",
+              "sub_offerings": ["Full Martech Stack", "Automated Actions", "Complete Agency Managed Services"],
+              "likely_use_cases": ["Automotive dealer digital marketing", "Omnichannel campaign execution", "Performance marketing optimization"],
+              "likely_industries": ["Automotive", "BFSI", "Retail & Ecommerce"]
+            },
+            {
+              "service_offering": "Voice of the Customer (Operations)",
+              "offering_id": "DO-MKT-VOC",
+              "short_description": "Turning customer feedback into action with an integrated VOC platform and services offering for maximum value",
+              "sub_offerings": ["Modern Listening", "Analytics & Generative AI", "Automated Actions", "Experience Management"],
+              "likely_use_cases": ["NPS management", "Customer feedback programs", "VOC analytics"],
+              "likely_industries": ["BFSI", "Technology & Consumer Electronics", "Retail & Ecommerce"]
+            },
+            {
+              "service_offering": "Loyalty (Operations)",
+              "offering_id": "DO-MKT-LOY",
+              "short_description": "Innovative tech-driven customer loyalty programs to drive engagement and develop valuable, lasting customer relationships",
+              "sub_offerings": ["Customer Intelligence", "Customer Value Proposition", "Omnichannel Personalization & Relevance", "Human-Centered Experience Design"],
+              "likely_use_cases": ["Loyalty program management", "Customer retention operations", "Loyalty platform deployment"],
+              "likely_industries": ["Retail & Ecommerce", "BFSI", "Media & Communications"]
+            },
+            {
+              "service_offering": "Content Studio",
+              "offering_id": "DO-MKT-CS",
+              "short_description": "People, processes, and technology enabling efficient content production and management for B2B and B2C audiences",
+              "sub_offerings": ["Planning & Scheduling", "Creation, Ideation & Development", "Expert copywriting, video & visual design", "Quality control, translation"],
+              "likely_use_cases": ["Content production at scale", "Multilingual content", "Content operations and workflow"],
+              "likely_industries": ["Media & Communications", "Technology & Consumer Electronics", "Retail & Ecommerce"]
+            }
+          ]
+        },
+        {
+          "service_group": "Sales",
+          "group_id": "DO-SAL",
+          "short_description": "End-to-end sales services driving success through data-driven strategies, AI-powered technology and talented teams",
+          "service_offerings": [
+            {
+              "service_offering": "B2B Sales",
+              "offering_id": "DO-SAL-B2B",
+              "short_description": "Integrating deep market insights, technology and talented professionals to optimize buyer journeys, increase revenue and fuel sustainable growth",
+              "sub_offerings": ["Demand Generation", "Inside Sales", "Customer Success", "Renewals", "Channel Management", "Sales Support", "GTM Consulting"],
+              "likely_use_cases": ["Inside sales outsourcing", "Demand generation", "Sales pipeline management", "Channel partner sales"],
+              "likely_industries": ["Technology & Consumer Electronics", "BFSI", "Industrial Products"]
+            },
+            {
+              "service_offering": "B2C Sales",
+              "offering_id": "DO-SAL-B2C",
+              "short_description": "Identifying and engaging customers in the right moments with relevant offers, proactively retaining and growing their value over time",
+              "sub_offerings": ["Acquisition", "Onboarding", "Sales Assistance", "Upsell / Cross-Sell", "Retention & Renewals", "Sales & Revenue Analytics"],
+              "likely_use_cases": ["Consumer acquisition campaigns", "Upsell and cross-sell programs", "Customer retention sales"],
+              "likely_industries": ["Retail & Ecommerce", "Media & Communications", "BFSI"]
+            }
+          ]
+        },
+        {
+          "service_group": "Customer Service",
+          "group_id": "DO-CS",
+          "short_description": "Transformative customer services to support every interaction, powered by a hybrid of innovative technology and caring talent",
+          "service_offerings": [
+            {
+              "service_offering": "Customer Care",
+              "offering_id": "DO-CS-CC",
+              "short_description": "B2C and B2B services powered by talent and technology solutions, optimized with operating models, data analytics, and AI-driven omnichannel strategies to achieve desired outcomes",
+              "sub_offerings": ["Customer Support", "Complaints", "Product Information", "Multilingual", "AI Powered Solutions"],
+              "likely_use_cases": ["Customer support outsourcing", "Omnichannel service delivery", "AI-augmented customer care"],
+              "likely_industries": ["Retail & Ecommerce", "Healthcare", "Technology & Consumer Electronics", "Media & Communications"]
+            },
+            {
+              "service_offering": "Technical Support",
+              "offering_id": "DO-CS-TS",
+              "short_description": "B2C and B2B services delivering multilingual, omnichannel support for everything from simple questions to complex problems with technical advisors, backed by generative AI technology",
+              "sub_offerings": ["Troubleshooting", "Installation & Setup", "Remote Assistance", "IT Helpdesk", "Knowledge Management"],
+              "likely_use_cases": ["Tech product support", "IT helpdesk outsourcing", "Multilingual technical support"],
+              "likely_industries": ["Technology & Consumer Electronics", "Healthcare", "Media & Communications"]
+            }
+          ]
+        },
+        {
+          "service_group": "Trust & Safety",
+          "group_id": "DO-TS",
+          "short_description": "Providing the tools, systems, and operations to enforce content and product policies for ensuring safety, security and compliance",
+          "service_offerings": [
+            {
+              "service_offering": "Content Moderation",
+              "offering_id": "DO-TS-CM",
+              "short_description": "Validating the accuracy and safety of user-generated content and virtual environments",
+              "sub_offerings": ["User Generated Content", "Developer Compliance", "Account Integrity", "Product Tagging/Labelling", "Live/Critical Safety"],
+              "likely_use_cases": ["UGC moderation", "Platform safety operations", "Real-time content review"],
+              "likely_industries": ["Media & Communications", "Technology & Consumer Electronics"]
+            },
+            {
+              "service_offering": "Platform Integrity & Identity",
+              "offering_id": "DO-TS-PII",
+              "short_description": "Analyzing user profiles and interactions to detect and prevent scams and fraud",
+              "sub_offerings": ["Background Verification", "Compliance Checks"],
+              "likely_use_cases": ["Identity verification", "Fraud detection", "Account security"],
+              "likely_industries": ["Technology & Consumer Electronics", "BFSI", "Media & Communications"]
+            },
+            {
+              "service_offering": "AI Support Services (T&S)",
+              "offering_id": "DO-TS-AISS",
+              "short_description": "Optimizing decision accuracy with trained AI models through supervised learning, including data labelling, annotation, and generative AI model training",
+              "sub_offerings": ["Data Labelling/Annotation", "Generative AI Model Training"],
+              "likely_use_cases": ["AI training data creation", "Model fine-tuning", "Responsible AI operations"],
+              "likely_industries": ["Technology & Consumer Electronics", "Media & Communications"]
+            }
+          ]
+        },
+        {
+          "service_group": "Finance & Compliance",
+          "group_id": "DO-FC",
+          "short_description": "Efficient tech-powered finance and compliance services for improved experiences and robust financial integrity",
+          "service_offerings": [
+            {
+              "service_offering": "Collections",
+              "offering_id": "DO-FC-COL",
+              "short_description": "Modern debt recovery solutions employing innovative tech and communication strategies that align with clients' values and customer relationships",
+              "sub_offerings": ["International Credit Management", "B2B Marketplace Payment", "Disputes & Chargebacks", "Collection Services", "Risk Analytics", "Collections Analytics", "Compliance Analytics"],
+              "likely_use_cases": ["Debt collections outsourcing", "Dispute management", "Collections analytics"],
+              "likely_industries": ["BFSI"]
+            },
+            {
+              "service_offering": "Financial Crime & Compliance",
+              "offering_id": "DO-FC-FCC",
+              "short_description": "Streamlining workflows, reviewing suspicious transactions, and assisting in disputes and chargebacks to avoid revenue loss and improve experiences",
+              "sub_offerings": ["KYC Services", "Anti Money Laundering", "Fraud Management"],
+              "likely_use_cases": ["KYC/AML operations", "Fraud management", "Regulatory compliance operations"],
+              "likely_industries": ["BFSI"]
+            },
+            {
+              "service_offering": "Finance & Accounting",
+              "offering_id": "DO-FC-FA",
+              "short_description": "Infusing technology and automation for greater cost efficiency, faster decision-making, and robust financial integrity",
+              "sub_offerings": ["Procure to Pay [P2P]", "Order to Cash [O2C]", "Transformation & Automation", "Business Analytics"],
+              "likely_use_cases": ["Finance process outsourcing", "P2P/O2C automation", "Finance transformation"],
+              "likely_industries": ["BFSI", "Healthcare", "Retail & Ecommerce"]
+            }
+          ]
+        },
+        {
+          "service_group": "Workforce Management",
+          "group_id": "DO-WFM",
+          "short_description": "Transforming global workforce management to ensure compliance, streamline operations, reduce costs, and improve service delivery",
+          "service_offerings": [
+            {
+              "service_offering": "WFM Consulting",
+              "offering_id": "DO-WFM-CON",
+              "short_description": "Facilitating deployment of WFM best practices, technologies and integration across organizations and CX ecosystems",
+              "sub_offerings": ["WFM Practices", "WFM Tools", "WFM Optimization", "WFM Integration", "Workforce Productivity"],
+              "likely_use_cases": ["WFM strategy and design", "WFM technology selection", "Workforce productivity improvement"],
+              "likely_industries": ["BFSI", "Retail & Ecommerce", "Healthcare"]
+            },
+            {
+              "service_offering": "WFM Analytics",
+              "offering_id": "DO-WFM-ANA",
+              "short_description": "Providing data-driven insights to optimize resources, reduce costs, enhance customer services and support strategic decision-making",
+              "sub_offerings": ["Demand Forecasting", "Schedule Optimization", "Cost Analysis", "Compliance Monitoring"],
+              "likely_use_cases": ["Workforce capacity planning", "Schedule optimization", "WFM cost analysis"],
+              "likely_industries": ["BFSI", "Retail & Ecommerce", "Healthcare"]
+            },
+            {
+              "service_offering": "WFM as a Service",
+              "offering_id": "DO-WFM-WFMAS",
+              "short_description": "Providing a complete WFM operation enabled by experts to drive workforce productivity and efficiency at scale",
+              "sub_offerings": ["Planning & Scheduling", "Real Time Management", "Demand Forecasting", "Capacity Planning", "WFM Platform", "Employee Satisfaction Surveys"],
+              "likely_use_cases": ["End-to-end WFM outsourcing", "Real-time workforce management", "WFM platform managed service"],
+              "likely_industries": ["Healthcare", "Technology & Consumer Electronics", "Retail & Ecommerce"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

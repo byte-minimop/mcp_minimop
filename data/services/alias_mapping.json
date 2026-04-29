@@ -1,0 +1,490 @@
+{
+  "_meta": {
+    "purpose": "Normalize messy or informal user inputs to official Concentrix service language for Beacon inference",
+    "usage": "Match user input tokens against alias arrays. The matched record provides the canonical service_offering and its category/group context.",
+    "note": "Aliases are lowercase and/or colloquial. Canonical fields use official Concentrix naming."
+  },
+  "alias_map": [
+
+    {
+      "canonical_offering": "Generative AI",
+      "canonical_group": "Digital Innovation",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-DI-GAI",
+      "aliases": [
+        "gen ai", "genai", "generative ai", "gai", "llm", "large language model",
+        "chatgpt", "openai", "copilot", "ai strategy", "ai readiness", "gen ai strategy",
+        "enterprise ai", "ai deployment", "ai implementation", "foundation models",
+        "ai transformation", "ai consulting"
+      ]
+    },
+    {
+      "canonical_offering": "Process Automation",
+      "canonical_group": "Business Transformation",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-BT-PA",
+      "aliases": [
+        "process automation", "rpa", "robotic process automation", "intelligent automation",
+        "workflow automation", "bpa", "business process automation", "automation consulting",
+        "automation assessment", "process improvement", "lean", "six sigma", "process reengineering"
+      ]
+    },
+    {
+      "canonical_offering": "Process Automation (Tech)",
+      "canonical_group": "Enterprise Automation",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-EA-PA",
+      "aliases": [
+        "rpa implementation", "automation technology", "ui path", "uipath", "automation anywhere",
+        "blue prism", "intelligent document processing", "idp", "bot development", "process bots"
+      ]
+    },
+    {
+      "canonical_offering": "Operating Model Design",
+      "canonical_group": "Business Transformation",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-BT-OMD",
+      "aliases": [
+        "operating model", "operating model design", "operating model redesign", "ops model",
+        "target operating model", "tom", "digital operating model", "service operations design",
+        "ai readiness", "future state operating model"
+      ]
+    },
+    {
+      "canonical_offering": "Organizational Change",
+      "canonical_group": "Business Transformation",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-BT-OC",
+      "aliases": [
+        "change management", "organizational change", "org change", "transformation management",
+        "change program", "culture change", "business change", "people change",
+        "change communications", "transformation delivery"
+      ]
+    },
+    {
+      "canonical_offering": "Customer Experience Design",
+      "canonical_group": "Experience Design",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-ED-CXD",
+      "aliases": [
+        "cx", "customer experience", "customer journey", "cx strategy", "cx design",
+        "cx transformation", "customer journey mapping", "contact center experience",
+        "omnichannel cx", "cx consulting", "service design"
+      ]
+    },
+    {
+      "canonical_offering": "User Experience Design",
+      "canonical_group": "Experience Design",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-ED-UXD",
+      "aliases": [
+        "ux", "user experience", "ux design", "ui design", "ui/ux", "ux research",
+        "usability", "user research", "persona development", "prototyping", "design ops",
+        "digital design", "interface design", "ux consulting", "ux strategy"
+      ]
+    },
+    {
+      "canonical_offering": "Employee Experience Design",
+      "canonical_group": "Experience Design",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-ED-EXD",
+      "aliases": [
+        "employee experience", "ex", "employee engagement", "employee wellness",
+        "workforce experience", "agent experience", "digital workplace", "eex",
+        "employee satisfaction", "people experience"
+      ]
+    },
+    {
+      "canonical_offering": "Brand Experience Design",
+      "canonical_group": "Experience Design",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-ED-BXD",
+      "aliases": [
+        "brand experience", "brand strategy", "brand design", "brand identity",
+        "brand transformation", "rebranding", "brand positioning", "brand narrative"
+      ]
+    },
+    {
+      "canonical_offering": "Behavioral Science",
+      "canonical_group": "Experience Design",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-ED-BS",
+      "aliases": [
+        "behavioral science", "behavioural science", "nudge", "nudge theory",
+        "behavior change", "behavioral economics", "customer behavior", "digital adoption",
+        "behavior nudging", "decision science"
+      ]
+    },
+    {
+      "canonical_offering": "Mobility",
+      "canonical_group": "Digital Innovation",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-DI-MOB",
+      "aliases": [
+        "mobility", "mobile", "mobile experience", "mobile app", "mobile strategy",
+        "mobile ux", "mobile-first", "app design", "ios", "android", "mobile optimization",
+        "mobile conversion"
+      ]
+    },
+    {
+      "canonical_offering": "Digital Marketing",
+      "canonical_group": "Lifecycle Engagement",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-LE-DM",
+      "aliases": [
+        "digital marketing", "content marketing", "seo", "search engine optimization",
+        "content strategy", "digital agency", "online marketing", "inbound marketing",
+        "marketing transformation", "content production", "organic search"
+      ]
+    },
+    {
+      "canonical_offering": "Customer Loyalty",
+      "canonical_group": "Lifecycle Engagement",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-LE-CL",
+      "aliases": [
+        "loyalty", "customer loyalty", "loyalty program", "loyalty strategy",
+        "customer retention", "rewards program", "loyalty design", "retention strategy",
+        "martech loyalty", "loyalty platform"
+      ]
+    },
+    {
+      "canonical_offering": "Lifetime Value",
+      "canonical_group": "Lifecycle Engagement",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-LE-LTV",
+      "aliases": [
+        "lifetime value", "ltv", "clv", "customer lifetime value", "cltv",
+        "customer value", "upsell", "cross-sell", "revenue per customer",
+        "lifecycle strategy", "journey orchestration"
+      ]
+    },
+    {
+      "canonical_offering": "Digital Selling",
+      "canonical_group": "Lifecycle Engagement",
+      "canonical_category": "Strategy & Design",
+      "offering_id": "SD-LE-DS",
+      "aliases": [
+        "digital selling", "sales enablement", "b2b digital sales", "sales tech",
+        "sales technology", "buyer journey", "prospect engagement", "sales personalization"
+      ]
+    },
+    {
+      "canonical_offering": "Data & Analytics Transformation",
+      "canonical_group": "Data & Analytics Transformation",
+      "canonical_category": "Data & Analytics",
+      "offering_id": "DA-DAT-DVR",
+      "aliases": [
+        "data strategy", "data transformation", "analytics strategy", "analytics maturity",
+        "data maturity", "data roadmap", "analytics roadmap", "data and analytics",
+        "d&a transformation", "data governance", "data program"
+      ]
+    },
+    {
+      "canonical_offering": "Advanced Analytics",
+      "canonical_group": "Advanced Analytics",
+      "canonical_category": "Data & Analytics",
+      "offering_id": "DA-AA-MLO",
+      "aliases": [
+        "advanced analytics", "machine learning", "ml", "predictive analytics",
+        "ai analytics", "data science", "ml ops", "mlops", "predictive modeling",
+        "forecasting", "statistical modeling", "ai models"
+      ]
+    },
+    {
+      "canonical_offering": "Enterprise Intelligence",
+      "canonical_group": "Enterprise Intelligence",
+      "canonical_category": "Data & Analytics",
+      "offering_id": "DA-EI-HCBI",
+      "aliases": [
+        "business intelligence", "bi", "reporting", "dashboards", "analytics platform",
+        "data visualization", "embedded analytics", "enterprise reporting", "self-service bi",
+        "power bi", "tableau", "looker", "qlik"
+      ]
+    },
+    {
+      "canonical_offering": "Contact Center Analytics",
+      "canonical_group": "Operational Insights",
+      "canonical_category": "Data & Analytics",
+      "offering_id": "DA-OI-CCA",
+      "aliases": [
+        "contact center analytics", "call center analytics", "cx analytics",
+        "interaction analytics", "speech analytics", "text analytics", "aht analytics",
+        "agent performance analytics", "csat analytics"
+      ]
+    },
+    {
+      "canonical_offering": "Sales & Revenue Analytics",
+      "canonical_group": "Industry & Domain Solutions",
+      "canonical_category": "Data & Analytics",
+      "offering_id": "DA-IDS-SRA",
+      "aliases": [
+        "sales analytics", "revenue analytics", "revenue optimization",
+        "hyper-personalization", "sales data", "conversion analytics",
+        "pipeline analytics", "crm analytics"
+      ]
+    },
+    {
+      "canonical_offering": "Data Governance",
+      "canonical_group": "Data & Analytics Transformation",
+      "canonical_category": "Data & Analytics",
+      "offering_id": "DA-DAT-DG",
+      "aliases": [
+        "data governance", "data quality", "master data management", "mdm",
+        "data catalog", "metadata management", "data compliance", "gdpr data",
+        "data policies", "data standards"
+      ]
+    },
+    {
+      "canonical_offering": "Tech Advisory",
+      "canonical_group": "Technology Transformation",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-TT-TA",
+      "aliases": [
+        "tech advisory", "it advisory", "technology consulting", "technology strategy",
+        "it strategy", "it roadmap", "architecture consulting", "technology governance",
+        "it transformation", "digital strategy"
+      ]
+    },
+    {
+      "canonical_offering": "Application Modernization",
+      "canonical_group": "Application Services",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-AS-AM",
+      "aliases": [
+        "app modernization", "application modernization", "legacy modernization",
+        "replatforming", "refactoring", "cloud migration", "microservices migration",
+        "app transformation", "system modernization", "lift and shift"
+      ]
+    },
+    {
+      "canonical_offering": "AI Engineering",
+      "canonical_group": "Application Services",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-AS-AIE",
+      "aliases": [
+        "ai engineering", "ai development", "ml engineering", "ai models", "nlp",
+        "computer vision", "ai platform", "model development", "ai build",
+        "intelligent automation development"
+      ]
+    },
+    {
+      "canonical_offering": "Salesforce",
+      "canonical_group": "Experience Platforms",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-EP-SF",
+      "aliases": [
+        "salesforce", "sfdc", "sales cloud", "service cloud", "marketing cloud",
+        "salesforce crm", "salesforce implementation", "salesforce integration",
+        "salesforce commerce", "salesforce data cloud", "cdp salesforce"
+      ]
+    },
+    {
+      "canonical_offering": "Adobe",
+      "canonical_group": "Experience Platforms",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-EP-AD",
+      "aliases": [
+        "adobe", "aem", "adobe experience manager", "adobe analytics", "adobe target",
+        "adobe campaign", "adobe experience cloud", "adobe journey optimizer",
+        "adobe marketo", "adobe commerce", "magento"
+      ]
+    },
+    {
+      "canonical_offering": "Sitecore",
+      "canonical_group": "Experience Platforms",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-EP-SC",
+      "aliases": [
+        "sitecore", "sitecore cms", "sitecore xm", "sitecore xp", "sitecore cdp",
+        "sitecore personalize", "sitecore implementation"
+      ]
+    },
+    {
+      "canonical_offering": "MarTech Strategy",
+      "canonical_group": "Technology Transformation",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-TT-MTS",
+      "aliases": [
+        "martech", "marketing technology", "marketing tech stack", "cdp", "customer data platform",
+        "marketing automation", "martech strategy", "martech transformation",
+        "marketing stack", "martech assessment", "marketing platform"
+      ]
+    },
+    {
+      "canonical_offering": "Cloud Contact Center (CCaaS)",
+      "canonical_group": "CX Technology",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-CXT-CCaaS",
+      "aliases": [
+        "ccaas", "cloud contact center", "contact center as a service", "genesys",
+        "avaya", "nice", "amazon connect", "aws connect", "contact center cloud",
+        "cloud contact centre", "omnichannel contact center", "contact center platform"
+      ]
+    },
+    {
+      "canonical_offering": "Self-Service AI Bots",
+      "canonical_group": "CX Technology",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-CXT-SAB",
+      "aliases": [
+        "chatbot", "voicebot", "ivr", "virtual assistant", "conversational ai",
+        "ai bot", "self-service ai", "nlu", "nlp bot", "intent recognition",
+        "bot training", "conversational bot", "digital agent"
+      ]
+    },
+    {
+      "canonical_offering": "Voice of the Customer (CXT)",
+      "canonical_group": "CX Technology",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-CXT-VOC",
+      "aliases": [
+        "voc", "voice of customer", "voice of the customer", "nps platform", "csat platform",
+        "customer feedback platform", "survey platform", "ces", "cx measurement",
+        "feedback management", "customer listening"
+      ]
+    },
+    {
+      "canonical_offering": "Cybersecurity",
+      "canonical_group": "Cybersecurity",
+      "canonical_category": "Enterprise Technology",
+      "offering_id": "ET-CYB-SOC",
+      "aliases": [
+        "cybersecurity", "cyber security", "soc", "security operations", "mssp",
+        "managed security", "endpoint security", "cloud security", "network security",
+        "threat detection", "zero trust", "siem", "soar", "pen testing", "penetration testing"
+      ]
+    },
+    {
+      "canonical_offering": "Customer Care",
+      "canonical_group": "Customer Service",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-CS-CC",
+      "aliases": [
+        "customer care", "customer support", "customer service", "bpo", "contact center bpo",
+        "outsourced customer service", "cx operations", "customer service outsourcing",
+        "support operations", "help desk", "service desk", "inbound customer service",
+        "omnichannel support"
+      ]
+    },
+    {
+      "canonical_offering": "Technical Support",
+      "canonical_group": "Customer Service",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-CS-TS",
+      "aliases": [
+        "technical support", "tech support", "it support", "it helpdesk", "tier 1 support",
+        "tier 2 support", "product support", "device support", "troubleshooting",
+        "technical helpdesk", "multilingual tech support"
+      ]
+    },
+    {
+      "canonical_offering": "Performance Marketing",
+      "canonical_group": "Marketing",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-MKT-PM",
+      "aliases": [
+        "performance marketing", "paid search", "ppc", "sem", "google ads", "paid media",
+        "digital advertising", "programmatic", "automotive marketing", "dealer marketing",
+        "omnichannel campaigns", "campaign management services"
+      ]
+    },
+    {
+      "canonical_offering": "Loyalty (Operations)",
+      "canonical_group": "Marketing",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-MKT-LOY",
+      "aliases": [
+        "loyalty management", "loyalty operations", "loyalty platform management",
+        "rewards management", "points program", "membership program", "loyalty crm",
+        "loyalty program operations"
+      ]
+    },
+    {
+      "canonical_offering": "Content Studio",
+      "canonical_group": "Marketing",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-MKT-CS",
+      "aliases": [
+        "content studio", "content production", "content operations", "content factory",
+        "content services", "creative services", "translation", "localization",
+        "content management", "editorial services", "content at scale"
+      ]
+    },
+    {
+      "canonical_offering": "B2B Sales",
+      "canonical_group": "Sales",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-SAL-B2B",
+      "aliases": [
+        "b2b sales", "inside sales", "demand generation", "lead generation",
+        "outbound sales", "sales outsourcing", "b2b bpo", "sales operations",
+        "customer success", "renewals", "channel sales", "gtm", "go-to-market"
+      ]
+    },
+    {
+      "canonical_offering": "B2C Sales",
+      "canonical_group": "Sales",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-SAL-B2C",
+      "aliases": [
+        "b2c sales", "consumer sales", "acquisition", "upsell", "cross-sell",
+        "retention", "renewal", "outbound sales b2c", "telesales", "sales bpo"
+      ]
+    },
+    {
+      "canonical_offering": "Content Moderation",
+      "canonical_group": "Trust & Safety",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-TS-CM",
+      "aliases": [
+        "content moderation", "trust and safety", "t&s", "ugc moderation",
+        "user generated content", "platform safety", "content review",
+        "comment moderation", "social media moderation", "harmful content"
+      ]
+    },
+    {
+      "canonical_offering": "Financial Crime & Compliance",
+      "canonical_group": "Finance & Compliance",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-FC-FCC",
+      "aliases": [
+        "financial crime", "kyc", "know your customer", "aml", "anti money laundering",
+        "fraud management", "compliance operations", "fcc", "financial compliance",
+        "regulatory compliance", "financial risk", "transaction monitoring"
+      ]
+    },
+    {
+      "canonical_offering": "Finance & Accounting",
+      "canonical_group": "Finance & Compliance",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-FC-FA",
+      "aliases": [
+        "finance and accounting", "f&a", "finance bpo", "procure to pay", "p2p",
+        "order to cash", "o2c", "accounts payable", "accounts receivable",
+        "fao", "finance outsourcing", "shared services finance"
+      ]
+    },
+    {
+      "canonical_offering": "WFM Consulting",
+      "canonical_group": "Workforce Management",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-WFM-CON",
+      "aliases": [
+        "workforce management", "wfm", "workforce planning", "capacity planning",
+        "workforce optimization", "wfo", "scheduling", "headcount planning",
+        "wfm consulting", "workforce strategy"
+      ]
+    },
+    {
+      "canonical_offering": "WFM as a Service",
+      "canonical_group": "Workforce Management",
+      "canonical_category": "Digital Operations",
+      "offering_id": "DO-WFM-WFMAS",
+      "aliases": [
+        "wfm as a service", "wfmaas", "managed wfm", "outsourced wfm",
+        "real time management", "rtm", "wfm operations"
+      ]
+    }
+  ]
+}
