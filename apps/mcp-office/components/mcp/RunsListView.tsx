@@ -100,7 +100,8 @@ function matchesQuery(row: RunListRow, qRaw: string): boolean {
     row.run_id, row.campaign_title, row.campaign_underscore,
     row.family, row.markets.join(" "), row.locales.join(" "),
     row.request_ids.join(" "), row.status,
-    row.customer_id ?? "", row.creator ?? "",
+    row.customer_id ?? "", row.creator ?? "", row.latest_push_actor ?? "",
+    row.product_or_service ?? "", row.campaign_objective ?? "", row.target_audience ?? "",
   ].join(" ").toLowerCase();
   return q.split(/\s+/).filter(Boolean).every((term) => hay.includes(term));
 }
@@ -345,6 +346,18 @@ export function RunsListView({
                     {r.campaign_title}
                   </Link>
                   <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] text-[#8b9098]">
+                    {r.product_or_service && (
+                      <span title="Product/service">svc: {r.product_or_service}</span>
+                    )}
+                    {r.campaign_objective && (
+                      <span title="Campaign objective">obj: {r.campaign_objective}</span>
+                    )}
+                    {r.target_audience && (
+                      <span className="max-w-[180px] truncate" title={`Target audience: ${r.target_audience}`}>aud: {r.target_audience}</span>
+                    )}
+                    {r.budget_label && (
+                      <span title="Budget">budget: {r.budget_label}</span>
+                    )}
                     {r.customer_id && (
                       <span className="font-mono">{r.customer_id}</span>
                     )}
@@ -354,6 +367,11 @@ export function RunsListView({
                         {r.creator_is_dev && (
                           <span className="rounded-[3px] border border-[#fcd4a3] bg-[#fff1de] px-1 py-0.5 font-medium text-[#8c4400]">dev</span>
                         )}
+                      </span>
+                    )}
+                    {r.latest_push_actor && (
+                      <span title={r.latest_push_account_name ? `Latest push account: ${r.latest_push_account_name}` : "Latest push actor"}>
+                        push by {r.latest_push_actor}
                       </span>
                     )}
                   </div>

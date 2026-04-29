@@ -15,7 +15,8 @@
 export type LearningEventType =
   | "family_override"      // human selected different family than MCP recommended
   | "service_correction"   // MCP had to correct AI's canonical offering at plan stage
-  | "recurring_blocker";   // blueprint hard gap that recurs for the same context
+  | "recurring_blocker"    // blueprint hard gap that recurs for the same context
+  | "successful_case";     // pushed/validated case that is a good use-case signal
 
 /** Context payload for a family_override event */
 export interface FamilyOverrideContext {
@@ -44,17 +45,33 @@ export interface RecurringBlockerContext {
   message: string;
 }
 
+/** Context payload for a successful_case event */
+export interface SuccessfulCaseContext {
+  family: string;
+  service_category: string | null;
+  service_group: string | null;
+  campaign_context: "careers" | "corporate" | null;
+  product_or_service: string | null;
+  campaign_objective: string | null;
+  markets: string[];
+  locales: string[];
+  push_outcome: "succeeded";
+  manager_summary: string;
+}
+
 export type LearningEventContext =
   | FamilyOverrideContext
   | ServiceCorrectionContext
-  | RecurringBlockerContext;
+  | RecurringBlockerContext
+  | SuccessfulCaseContext;
 
 // ── Pattern types ─────────────────────────────────────────────────────────────
 
 export type LearningPatternType =
   | "family_override_preference"       // consistent override for a service context
   | "service_normalization_candidate"  // AI reliably gets this alias wrong
-  | "recurring_blocker_pattern";       // same blocker keeps appearing for same context
+  | "recurring_blocker_pattern"        // same blocker keeps appearing for same context
+  | "successful_use_case_pattern";     // repeatable high-quality use case MCP can reuse
 
 export type LearningPatternStatus = "candidate" | "promoted" | "dismissed";
 

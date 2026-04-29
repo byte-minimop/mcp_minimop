@@ -18,6 +18,7 @@ import type {
   FamilyOverrideContext,
   ServiceCorrectionContext,
   RecurringBlockerContext,
+  SuccessfulCaseContext,
   MCPLearningPatternStatus,
 } from "./schema";
 
@@ -27,6 +28,7 @@ const PROMOTION_THRESHOLDS: Record<string, number> = {
   family_override_preference: 3,
   service_normalization_candidate: 2,
   recurring_blocker_pattern: 3,
+  successful_use_case_pattern: 2,
 };
 
 // ── Signal key construction ───────────────────────────────────────────────────
@@ -58,6 +60,10 @@ export function buildSignalKey(
       const c = context as RecurringBlockerContext;
       return `blocker:${c.rule_id}:fam:${c.family}:svc:${c.service_category ?? "unknown"}`;
     }
+    case "successful_case": {
+      const c = context as SuccessfulCaseContext;
+      return `success:fam:${c.family}:svc:${c.service_category ?? "unknown"}:ctx:${c.campaign_context ?? "unknown"}`;
+    }
   }
 }
 
@@ -68,6 +74,7 @@ export function patternTypeForEvent(eventType: LearningEventType): string {
     case "family_override": return "family_override_preference";
     case "service_correction": return "service_normalization_candidate";
     case "recurring_blocker": return "recurring_blocker_pattern";
+    case "successful_case": return "successful_use_case_pattern";
   }
 }
 
@@ -103,6 +110,15 @@ function buildAdvisoryNote(
         `Blocker '${c.rule_id}' recurs ${count} time${count !== 1 ? "s" : ""} ` +
         `for '${c.family}' campaigns in '${c.service_category ?? "unknown"}' context. ` +
         `Consider surfacing a pre-emptive warning in family guidance for this combination.`
+      );
+    }
+    case "successful_use_case_pattern": {
+      const c = context as SuccessfulCaseContext;
+      return (
+        `Successful '${c.family}' use case for '${c.service_category ?? "unknown"}' ` +
+        `${c.campaign_context ? `(${c.campaign_context}) ` : ""}` +
+        `has repeated ${count} time${count !== 1 ? "s" : ""}. ` +
+        `Use as a manager-visible reference pattern: ${c.manager_summary}`
       );
     }
     default:

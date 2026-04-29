@@ -267,10 +267,11 @@ export interface MCPPostValidationResponse {
  * A high-signal operational event emitted by Beacon after meaningful activity.
  * MCP captures these and uses them to build curated learning patterns over time.
  *
- * Three event types are supported at Phase 1:
+ * Four event types are supported at Phase 1:
  *   family_override    human selected different family than MCP recommended
  *   service_correction MCP had to fix AI's canonical offering at plan stage
  *   recurring_blocker  blueprint emitted a hard gap that recurs in this context
+ *   successful_case    pushed case that can become a repeatable best-use-case pattern
  *
  * Events are captured broadly; only events that cross a pattern threshold are
  * promoted to reusable operational knowledge.
@@ -278,7 +279,8 @@ export interface MCPPostValidationResponse {
 export type MCPLearningEventType =
   | "family_override"
   | "service_correction"
-  | "recurring_blocker";
+  | "recurring_blocker"
+  | "successful_case";
 
 export interface MCPFamilyOverrideContext {
   recommended_family: string;
@@ -304,11 +306,24 @@ export interface MCPRecurringBlockerContext {
   message: string;
 }
 
+export interface MCPSuccessfulCaseContext {
+  family: string;
+  service_category: string | null;
+  service_group: string | null;
+  campaign_context: "careers" | "corporate" | null;
+  product_or_service: string | null;
+  campaign_objective: string | null;
+  markets: string[];
+  locales: string[];
+  push_outcome: "succeeded";
+  manager_summary: string;
+}
+
 export interface MCPLearningEventRequest {
   event_type: MCPLearningEventType;
   account_id?: string | null;
   run_id?: string | null;
-  context: MCPFamilyOverrideContext | MCPServiceCorrectionContext | MCPRecurringBlockerContext;
+  context: MCPFamilyOverrideContext | MCPServiceCorrectionContext | MCPRecurringBlockerContext | MCPSuccessfulCaseContext;
 }
 
 /**

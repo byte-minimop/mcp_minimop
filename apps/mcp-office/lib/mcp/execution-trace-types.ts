@@ -301,6 +301,12 @@ export interface RunListRow {
   has_errors: boolean;
   fallback_used: boolean;
   request_ids: string[];
+  product_or_service: string | null;
+  campaign_objective: string | null;
+  target_audience: string | null;
+  budget_label: string | null;
+  latest_push_actor: string | null;
+  latest_push_account_name: string | null;
   /** Google Ads customer_id for this run (null if account not selected at intake). */
   customer_id: string | null;
   /** Resolved email or dev-mode label for who submitted this run. */
