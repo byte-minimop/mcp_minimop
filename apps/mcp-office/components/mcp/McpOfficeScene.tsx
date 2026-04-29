@@ -355,6 +355,87 @@ const ZONES = [
   { id: "integrations", room: "integrations", stat: { a: "6",   b: "connectors" } },
 ];
 
+type BeaconOfficeActivity = {
+  surface: "desk" | "knowledge" | "ops" | "memory" | "integrations";
+  label: string;
+  detail: string;
+  cx: number;
+  cy: number;
+  atDesk: boolean;
+};
+
+function getBeaconOfficeActivity(
+  beacon: import("@/lib/mcp/beacon-activity").BeaconOperationalSnapshot | null
+): BeaconOfficeActivity {
+  if (!beacon) {
+    return {
+      surface: "desk",
+      label: "Beacon standby",
+      detail: "Beacon SQLite is unreachable, so the office is showing the default desk position.",
+      cx: 18,
+      cy: 12.1,
+      atDesk: true,
+    };
+  }
+
+  const currentStatus = beacon.currentRun?.effective_status ?? null;
+  const latestEvent = beacon.recentEvents[0] ?? null;
+  const latestPush = beacon.lastPush ?? null;
+
+  if (latestPush && (!latestEvent || Date.parse(latestPush.created_at) >= Date.parse(latestEvent.created_at))) {
+    return {
+      surface: "integrations",
+      label: latestPush.outcome === "succeeded" ? "Pushing through Integrations" : "Push review in Integrations",
+      detail: `${latestPush.run_id} · ${latestPush.outcome.replace(/_/g, " ")}`,
+      cx: 23.3,
+      cy: 17.35,
+      atDesk: false,
+    };
+  }
+
+  if (currentStatus === "ready_to_push" || currentStatus === "approved") {
+    return {
+      surface: "ops",
+      label: "Clearing governance in Ops",
+      detail: `${beacon.currentRun?.run_id ?? "current run"} · ${currentStatus.replace(/_/g, " ")}`,
+      cx: 22.2,
+      cy: 6.7,
+      atDesk: false,
+    };
+  }
+
+  if (currentStatus === "draft" || currentStatus === "regenerated") {
+    return {
+      surface: "knowledge",
+      label: "Planning with Knowledge",
+      detail: `${beacon.currentRun?.campaign_title ?? beacon.currentRun?.run_id ?? "draft"}`,
+      cx: 4.7,
+      cy: 6.45,
+      atDesk: false,
+    };
+  }
+
+  if (latestEvent?.event_type === "version_saved" || latestEvent?.event_type === "status_changed") {
+    return {
+      surface: "memory",
+      label: "Writing execution memory",
+      detail: `${latestEvent.run_id} · ${latestEvent.event_type.replace(/_/g, " ")}`,
+      cx: 6.4,
+      cy: 17.35,
+      atDesk: false,
+    };
+  }
+
+  return {
+    surface: "desk",
+    label: "Monitoring from Beacon desk",
+    detail: `${beacon.totals.runs} runs · ${beacon.queueAwaiting} awaiting review`,
+    cx: 18,
+    cy: 12.1,
+    atDesk: true,
+  };
+}
+
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
@@ -1147,9 +1228,42 @@ function DeskNameplate({
   );
 }
 
-function Desk({ desk, tick, hover, active, showLabel, onEnter, onLeave, onClick }: {
+function BeaconActivityAgent({ activity, tick }: { activity: BeaconOfficeActivity; tick: number }) {
+  if (activity.atDesk) return null;
+
+  const p = iso(activity.cx, activity.cy, 0.04);
+  const pulse = 1 + Math.sin(tick * 0.004) * 0.08;
+  const surfaceTone = activity.surface === "integrations" ? T.teal
+    : activity.surface === "ops" ? T.orange
+    : activity.surface === "knowledge" ? T.mint700
+    : T.navy600;
+
+  return (
+    <g style={{ pointerEvents: "none" }}>
+      <ellipse
+        cx={p.x}
+        cy={p.y + 5}
+        rx={28 * pulse}
+        ry={13 * pulse}
+        fill={surfaceTone}
+        opacity="0.14"
+      />
+      <ellipse cx={p.x} cy={p.y + 5} rx="22" ry="10" fill="none" stroke={surfaceTone} strokeWidth="1.1" strokeDasharray="3 3" opacity="0.65" />
+      <BeaconFigure cx={activity.cx} cy={activity.cy} tick={tick} />
+      <g transform={`translate(${p.x + 34}, ${p.y - 40})`}>
+        <rect x="-4" y="-16" width="184" height="43" rx="8" fill="#fff" stroke={T.n200} strokeWidth="0.7" filter="url(#iso-shadow-soft)" />
+        <rect x="-4" y="-16" width="4" height="43" rx="2" fill={surfaceTone} />
+        <text x="8" y="-1" fontSize="10" fontWeight="800" fill={T.navy} fontFamily={T.fontSans}>{activity.label}</text>
+        <text x="8" y="14" fontSize="8" fill={T.n500} fontFamily={T.fontMono}>{activity.detail.slice(0, 34)}</text>
+      </g>
+    </g>
+  );
+}
+
+function Desk({ desk, tick, hover, active, showLabel, beaconAway, onEnter, onLeave, onClick }: {
   desk: DeskDef; tick: number; hover: boolean; active: boolean;
   showLabel: boolean;
+  beaconAway?: boolean;
   onEnter: () => void; onLeave: () => void; onClick: () => void;
 }) {
   const { cx, cy, occupied, status } = desk;
@@ -1159,6 +1273,7 @@ function Desk({ desk, tick, hover, active, showLabel, onEnter, onLeave, onClick 
   const isBeacon = desk.id === "beacon";
   const isSecretary = desk.role === "secretary";
   const isAdmin = desk.role === "admin";
+  const effectiveOccupied = isBeacon && beaconAway ? false : !!occupied;
 
   return (
     <g style={{ cursor: "pointer" }} onMouseEnter={onEnter} onMouseLeave={onLeave} onClick={onClick}>
@@ -1181,9 +1296,9 @@ function Desk({ desk, tick, hover, active, showLabel, onEnter, onLeave, onClick 
       {!isBeacon && !isSecretary && !isAdmin && <Keyboard x={x + 0.7} y={y + 0.6} />}
       {isSecretary && <><Keyboard x={x + 0.2} y={y + 0.6} /><Papers x={x + 0.6} y={y + 0.3} /></>}
       {isAdmin && <Keyboard x={x + 0.7} y={y + 0.6} />}
-      {!isSecretary && !isAdmin && <OfficeChair x={cx} y={y + DeskD + 0.35} occupied={!!occupied} tint={desk.tint} />}
+      {!isSecretary && !isAdmin && <OfficeChair x={cx} y={y + DeskD + 0.35} occupied={effectiveOccupied} tint={desk.tint} />}
       {isAdmin && <OfficeChair x={cx} y={y + DeskD + 0.35} occupied={true} tint="navy" />}
-      {isBeacon && <BeaconFigure cx={cx} cy={y + DeskD + 0.5} tick={tick} />}
+      {isBeacon && !beaconAway && <BeaconFigure cx={cx} cy={y + DeskD + 0.5} tick={tick} />}
       {isSecretary && <GhostFigure cx={cx - 0.35} cy={y + DeskD + 0.4} tick={tick} shirt={T.mint} />}
       {isAdmin && <GhostFigure cx={cx} cy={y + DeskD + 0.4} tick={tick} shirt={T.navy} subtle />}
       {!isBeacon && !isSecretary && !isAdmin && occupied === false && (() => {
@@ -1796,6 +1911,7 @@ export function McpOfficeScene({
   }, []);
 
   PROJECTION.yawDeg = camera.yaw;
+  const beaconActivity = getBeaconOfficeActivity(beacon);
 
   const corners = [iso(0, 0), iso(GRID_W, 0), iso(0, GRID_D), iso(GRID_W, GRID_D)];
   const minX = Math.min(...corners.map((c) => c.x)) - 40;
@@ -1905,14 +2021,14 @@ export function McpOfficeScene({
           <g transform={sceneTransform}>
 
             {/* Floor slabs */}
-            <RoomFloor room={ROOMS.knowledge}    color="#f3e8d0" pattern="wood"     hover={hover === "knowledge"}    active={selected === "knowledge"} onEnter={() => onEnter("knowledge")}    onLeave={onLeave} onClick={() => inspect("knowledge")} />
+            <RoomFloor room={ROOMS.knowledge}    color="#f3e8d0" pattern="wood"     hover={hover === "knowledge"}    active={selected === "knowledge" || beaconActivity.surface === "knowledge"} onEnter={() => onEnter("knowledge")}    onLeave={onLeave} onClick={() => inspect("knowledge")} />
             <RoomFloor room={ROOMS.admin}        color="#ece7dc" pattern="carpet" hover={hover === "admin"} active={selected === "admin"} onEnter={() => onEnter("admin")} onLeave={onLeave} onClick={() => inspect("admin")} />
-            <RoomFloor room={ROOMS.ops}          color="#e3ecee" pattern="tile"     hover={hover === "ops"}          active={selected === "ops"} onEnter={() => onEnter("ops")}          onLeave={onLeave} onClick={() => inspect("ops")} />
+            <RoomFloor room={ROOMS.ops}          color="#e3ecee" pattern="tile"     hover={hover === "ops"}          active={selected === "ops" || beaconActivity.surface === "ops"} onEnter={() => onEnter("ops")}          onLeave={onLeave} onClick={() => inspect("ops")} />
             <CorridorFloor x1={0} y1={6} x2={GRID_W} y2={7} />
             <RoomFloor room={ROOMS.open}         color="#f0ede5" pattern="oakstrip" />
             <CorridorFloor x1={0} y1={16} x2={GRID_W} y2={18} />
-            <RoomFloor room={ROOMS.memory}       color="#e6e6e1" pattern="tile"     hover={hover === "memory"}       active={selected === "memory"} onEnter={() => onEnter("memory")}       onLeave={onLeave} onClick={() => inspect("memory")} />
-            <RoomFloor room={ROOMS.integrations} color="#e8ebe3" pattern="tile"     hover={hover === "integrations"} active={selected === "integrations"} onEnter={() => onEnter("integrations")} onLeave={onLeave} onClick={() => inspect("integrations")} />
+            <RoomFloor room={ROOMS.memory}       color="#e6e6e1" pattern="tile"     hover={hover === "memory"}       active={selected === "memory" || beaconActivity.surface === "memory"} onEnter={() => onEnter("memory")}       onLeave={onLeave} onClick={() => inspect("memory")} />
+            <RoomFloor room={ROOMS.integrations} color="#e8ebe3" pattern="tile"     hover={hover === "integrations"} active={selected === "integrations" || beaconActivity.surface === "integrations"} onEnter={() => onEnter("integrations")} onLeave={onLeave} onClick={() => inspect("integrations")} />
 
             {/* Beacon rug */}
             <polygon points={tilePoints(14.2, 8.7, 22.2, 13.4)} fill={T.navy50} stroke={T.navy200} strokeWidth="0.7" />
@@ -1936,8 +2052,11 @@ export function McpOfficeScene({
             {DESKS.slice().sort((a, b) => (a.cx + a.cy) - (b.cx + b.cy)).map((d) => (
               <Desk key={d.id} desk={d} tick={tick}
                 hover={hover === d.id} active={selected === d.id} showLabel={d.id === "beacon" || hover === d.id || selected === d.id}
+                beaconAway={d.id === "beacon" && !beaconActivity.atDesk}
                 onEnter={() => onEnter(d.id)} onLeave={onLeave} onClick={() => inspect(d.id)} />
             ))}
+
+            <BeaconActivityAgent activity={beaconActivity} tick={tick} />
 
             {/* Front rooms */}
             <FrontRoomsWallsAndFurniture tick={tick} />
