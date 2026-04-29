@@ -8,15 +8,16 @@ import type {
 
 export const runtime = "nodejs";
 
-// Push authorization model: access-based, not allowlist-based.
+// Push clearance model: user access + MCP catalog clearance.
 //
-// Beacon's push route now authorizes push based on whether the user's Google Ads
+// Beacon's push route first authorizes push based on whether the user's Google Ads
 // OAuth connection includes the target account (checked in Beacon directly via
-// getGoogleAdsAccessibleAccountForUser). This endpoint provides MCC catalog context
-// for operational visibility and audit logging — it is not a blocking gate.
+// getGoogleAdsAccessibleAccountForUser). When MCP is configured, Beacon also calls
+// this endpoint and fails closed unless the Concentrix MCC knowledge catalog
+// recognizes the target account.
 //
 // cleared=true:  account recognized in the Concentrix MCC knowledge catalog.
-// cleared=false: account not recognized in catalog — advisory only.
+// cleared=false: account not recognized in catalog — Beacon must block live push.
 
 export async function POST(
   req: NextRequest,
@@ -50,7 +51,7 @@ export async function POST(
       blockers: [
         {
           code: "account_not_in_mcc_catalog",
-          message: `Customer ID ${customerId} is not recognized in the Concentrix MCC knowledge catalog. This is advisory — push authorization is determined by your Google Ads connection in Beacon.`,
+          message: `Customer ID ${customerId} is not recognized in the Concentrix MCC knowledge catalog. Live push must remain blocked until the account is reviewed or added to the catalog.`,
         },
       ],
     });
