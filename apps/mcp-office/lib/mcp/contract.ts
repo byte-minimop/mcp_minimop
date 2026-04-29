@@ -347,6 +347,50 @@ export interface MCPLearningEventResponse {
   pattern_status: MCPLearningPatternStatus;
 }
 
+// ── Case snapshots ──────────────────────────────────────────────────────────
+
+export interface MCPCaseSnapshotRequest {
+  run_id: string;
+  version_number: number;
+  review_status: string;
+  customer_id?: string | null;
+  actor_user_id?: string | null;
+  event_type: "version_saved" | "status_changed" | "push_attempt" | "push_succeeded" | "push_failed";
+  occurred_at?: string;
+  campaign: {
+    title: string;
+    family: string;
+    product_or_service: string | null;
+    objective: string | null;
+    target_audience: string | null;
+    budget_label: string | null;
+    campaign_context: "careers" | "corporate" | null;
+    service_category: string | null;
+    service_group: string | null;
+    markets: string[];
+    locales: string[];
+  };
+  governance: {
+    validation_status: "ok" | "warning" | "error" | "blocked" | "pending" | "skipped";
+    push_status: "not_pushed" | "pushed" | "validation_failed" | "failed" | "blocked";
+    has_errors: boolean;
+    has_warnings: boolean;
+    hard_gap_rule_ids: string[];
+    soft_gap_count: number;
+    mcp_audit_state: string | null;
+  };
+  activity: {
+    summary: string;
+    last_action: string;
+  };
+}
+
+export interface MCPCaseSnapshotResponse {
+  accepted: true;
+  run_id: string;
+  stored_at: string;
+}
+
 // ── Push clearance ───────────────────────────────────────────────────────────
 
 export interface MCPPushClearanceRequest {

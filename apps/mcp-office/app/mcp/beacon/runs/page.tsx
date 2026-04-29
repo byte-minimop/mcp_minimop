@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { RunsListView } from "@/components/mcp/RunsListView";
 import { listRuns, isExecutionTraceAvailable } from "@/lib/mcp/execution-trace";
+import { listCaseSnapshotRows } from "@/lib/mcp/case-snapshot-store";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -30,13 +31,14 @@ export default async function RunsIndexPage(
   }
   // else: null = admin-wide (default)
 
-  const runs = available ? listRuns(100, activeCustomerId) : [];
+  const runs = available ? listRuns(100, activeCustomerId) : listCaseSnapshotRows(100, activeCustomerId);
   return (
     <RunsListView
       runs={runs}
-      available={available}
+      available={available || runs.length > 0}
       scope={activeCustomerId ? { kind: "customer", customer_id: activeCustomerId } : { kind: "all" }}
       initialQuery={params.q ?? ""}
+      source={available ? "beacon_sqlite" : "case_snapshot"}
     />
   );
 }
