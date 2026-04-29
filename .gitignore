@@ -28,3 +28,4 @@ data/mcc-export/source/
 .DS_Store
 .env
 *.local
+.vercel
