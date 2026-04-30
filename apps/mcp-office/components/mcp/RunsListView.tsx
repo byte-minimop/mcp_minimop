@@ -100,7 +100,8 @@ function matchesQuery(row: RunListRow, qRaw: string): boolean {
     row.run_id, row.campaign_title, row.campaign_underscore,
     row.family, row.markets.join(" "), row.locales.join(" "),
     row.request_ids.join(" "), row.status,
-    row.customer_id ?? "", row.creator ?? "",
+    row.customer_id ?? "", row.creator ?? "", row.latest_push_actor ?? "",
+    row.product_or_service ?? "", row.campaign_objective ?? "", row.target_audience ?? "",
   ].join(" ").toLowerCase();
   return q.split(/\s+/).filter(Boolean).every((term) => hay.includes(term));
 }
@@ -118,11 +119,13 @@ export function RunsListView({
   available,
   scope = { kind: "all" },
   initialQuery = "",
+  source = "beacon_sqlite",
 }: {
   runs: RunListRow[];
   available: boolean;
   scope?: RunsListScope;
   initialQuery?: string;
+  source?: "beacon_sqlite" | "case_snapshot";
 }) {
   const [filters, setFilters] = useState<Filters>({ ...EMPTY_FILTERS, q: initialQuery });
   const [selected, setSelected] = useState<string[]>([]);
@@ -204,7 +207,9 @@ export function RunsListView({
         crumb="Beacon"
         title="Runs"
         subtitle={
-          scope.kind === "customer"
+          source === "case_snapshot"
+            ? "Beacon SQLite is not mounted here; showing durable case snapshots pushed by Beacon into MCP."
+            : scope.kind === "customer"
             ? `Scoped to account ${scope.customer_id} — same lens as Beacon Queue. View all: remove ?scope=account or ?customer_id`
             : "All accounts (admin-wide). Add ?scope=account to match Beacon Queue's active account lens."
         }
@@ -318,7 +323,7 @@ export function RunsListView({
               <tr>
                 <td colSpan={11} className="px-3 py-6 text-center text-[12px] text-[#8b9098]">
                   {!available
-                    ? "Beacon SQLite not reachable — Execution Trace is disabled. Set BEACON_SQLITE_PATH to enable."
+                    ? "No Beacon SQLite or case snapshots available yet. Set BEACON_SQLITE_PATH or let Beacon push case snapshots."
                     : runs.length === 0
                       ? "No runs in beacon.sqlite."
                       : "No runs match the current filters."}
@@ -345,6 +350,18 @@ export function RunsListView({
                     {r.campaign_title}
                   </Link>
                   <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] text-[#8b9098]">
+                    {r.product_or_service && (
+                      <span title="Product/service">svc: {r.product_or_service}</span>
+                    )}
+                    {r.campaign_objective && (
+                      <span title="Campaign objective">obj: {r.campaign_objective}</span>
+                    )}
+                    {r.target_audience && (
+                      <span className="max-w-[180px] truncate" title={`Target audience: ${r.target_audience}`}>aud: {r.target_audience}</span>
+                    )}
+                    {r.budget_label && (
+                      <span title="Budget">budget: {r.budget_label}</span>
+                    )}
                     {r.customer_id && (
                       <span className="font-mono">{r.customer_id}</span>
                     )}
@@ -354,6 +371,11 @@ export function RunsListView({
                         {r.creator_is_dev && (
                           <span className="rounded-[3px] border border-[#fcd4a3] bg-[#fff1de] px-1 py-0.5 font-medium text-[#8c4400]">dev</span>
                         )}
+                      </span>
+                    )}
+                    {r.latest_push_actor && (
+                      <span title={r.latest_push_account_name ? `Latest push account: ${r.latest_push_account_name}` : "Latest push actor"}>
+                        push by {r.latest_push_actor}
                       </span>
                     )}
                   </div>
@@ -415,10 +437,14 @@ export function RunsListView({
       </div>
 
       <p className="mt-3 text-[10px] text-[#8b9098]">
-        Source of truth: Beacon SQLite tables <code className="font-mono">runs</code>,{" "}
-        <code className="font-mono">run_versions</code>,{" "}
-        <code className="font-mono">run_events</code>,{" "}
-        <code className="font-mono">push_audit</code>. Read-only.
+        {source === "case_snapshot" ? (
+          <>Source: MCP <code className="font-mono">case_snapshots</code> table populated by Beacon via <code className="font-mono">/api/mcp/case-snapshot</code>.</>
+        ) : (
+          <>Source of truth: Beacon SQLite tables <code className="font-mono">runs</code>,{" "}
+          <code className="font-mono">run_versions</code>,{" "}
+          <code className="font-mono">run_events</code>,{" "}
+          <code className="font-mono">push_audit</code>. Read-only.</>
+        )}
       </p>
     </div>
   );

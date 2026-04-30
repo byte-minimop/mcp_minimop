@@ -23,7 +23,7 @@ export async function POST(
     return NextResponse.json({ error: "Missing required fields: event_type, context." }, { status: 422 });
   }
 
-  const VALID_TYPES = ["family_override", "service_correction", "recurring_blocker"] as const;
+  const VALID_TYPES = ["family_override", "service_correction", "recurring_blocker", "successful_case"] as const;
   if (!VALID_TYPES.includes(body.event_type as typeof VALID_TYPES[number])) {
     return NextResponse.json({ error: `Unknown event_type: ${body.event_type}` }, { status: 422 });
   }

@@ -1413,13 +1413,13 @@ export function listRuns(limit = 100, customerId: string | null = null): RunList
 
     const pushLatestByRun = db
       .prepare(
-        `SELECT run_id, outcome, created_at
+        `SELECT run_id, outcome, created_at, user_id, account_name
          FROM push_audit
          WHERE id IN (
            SELECT MAX(id) FROM push_audit GROUP BY run_id
          )`,
       )
-      .all() as unknown as Array<{ run_id: string; outcome: string; created_at: string }>;
+      .all() as unknown as Array<{ run_id: string; outcome: string; created_at: string; user_id: string | null; account_name: string | null }>;
     const pushByRun = new Map(pushLatestByRun.map((p) => [p.run_id, p]));
 
     const pushAllByRun = db
@@ -1461,9 +1461,18 @@ export function listRuns(limit = 100, customerId: string | null = null): RunList
         asStr(cs["campaign_name"]) ||
         asStr(brief["product_or_service"]) ||
         r.run_id.slice(0, 8);
+      const productOrService = asStr(brief["product_or_service"]) || asStr(cs["product_or_service"]) || null;
+      const campaignObjective = asStr(brief["campaign_objective"]) || asStr(cs["objective"]) || null;
+      const targetAudience = asStr(brief["target_audience"]) || asStr(cs["target_audience"]) || null;
+      const budgetAmount = brief["budget_amount"] ?? asObj(brief["budget"])["amount"];
+      const budgetCurrency = asStr(brief["budget_currency"]) || asStr(asObj(brief["budget"])["currency"]);
+      const budgetLabel = budgetAmount !== undefined && budgetAmount !== null && String(budgetAmount).trim()
+        ? `${budgetCurrency || ""}${budgetCurrency ? " " : ""}${String(budgetAmount)}`
+        : null;
       const campaignUnderscore = campaignTitle.replace(/\s+/g, "_");
       const started = r.created_at;
       const latestPush = pushByRun.get(r.run_id) ?? null;
+      const pushActor = latestPush?.user_id ? resolveActor(latestPush.user_id, userIdentities) : null;
       const ended = latestPush?.created_at ?? r.updated_at;
       const validationStatus = classifyValidation(blueprint, bundle);
       const pushStatus = classifyPushStatus(
@@ -1522,6 +1531,12 @@ export function listRuns(limit = 100, customerId: string | null = null): RunList
         has_errors: hasErrors,
         fallback_used: fallbackUsed,
         request_ids: requestIdsByRun.get(r.run_id) ?? [],
+        product_or_service: productOrService,
+        campaign_objective: campaignObjective,
+        target_audience: targetAudience,
+        budget_label: budgetLabel,
+        latest_push_actor: pushActor?.label ?? null,
+        latest_push_account_name: latestPush?.account_name ?? null,
         customer_id: r.customer_id ?? null,
         creator: rowCreator.label,
         creator_is_dev: rowCreator.isDev,

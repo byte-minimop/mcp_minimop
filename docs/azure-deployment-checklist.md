@@ -25,6 +25,8 @@ Required for production runtime:
 | Setting | Purpose |
 | --- | --- |
 | `NODE_ENV=production` | Enables production runtime behavior. |
+| `WEBSITES_PORT=3000` | Tells Linux App Service which port the custom container listens on. The Dockerfile exposes/runs Next on port `3000`. |
+| `PORT=3000` | Keeps the Next standalone server aligned with the container/App Service port. |
 | `MCP_DATA_DIR` | Persistent Azure Files mount path for `learning.sqlite`. Production health fails when unset. |
 | `MCP_SHARED_SECRET` | Shared service secret required by all non-health MCP runtime endpoints. Beacon must send the same value via `MCP_API_SECRET`. |
 
@@ -93,3 +95,11 @@ Suggested manual rollback procedure:
 ## Current security follow-up
 
 The health endpoint is intentionally public for platform probes. Non-health MCP runtime endpoints are protected by `MCP_SHARED_SECRET` and expect Beacon to send the same value through the `x-mcp-shared-secret` header. Rotate the shared secret by updating both MCP `MCP_SHARED_SECRET` and Beacon `MCP_API_SECRET` together.
+
+MCP Office pages under `/mcp/*` can expose Beacon run metadata and execution traces. For Azure production, protect the UI with one of these controls before exposing the App Service publicly:
+
+1. Azure App Service Authentication / EasyAuth requiring the approved Concentrix owner/admin group.
+2. Private networking / internal ingress only.
+3. An app-level owner/admin auth middleware wired to the same corporate identity provider.
+
+Do not rely on `MCP_SHARED_SECRET` for browser UI auth; it is a service-to-service runtime API secret for Beacon, not a user session mechanism.

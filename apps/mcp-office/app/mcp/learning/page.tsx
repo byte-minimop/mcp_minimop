@@ -4,7 +4,7 @@ import {
   getLearningEventStats,
 } from "@/lib/learning/store";
 import type { LearningPatternRow } from "@/lib/learning/schema";
-import type { FamilyOverrideContext, ServiceCorrectionContext, RecurringBlockerContext } from "@/lib/learning/schema";
+import type { FamilyOverrideContext, ServiceCorrectionContext, RecurringBlockerContext, SuccessfulCaseContext } from "@/lib/learning/schema";
 import {
   PageHeader,
   SectionLabel,
@@ -37,12 +37,19 @@ const PATTERN_META: Record<string, { label: string; color: string; dot: string; 
     dot:   "bg-[#8b5cf6]",
     runtimeUse: null, // not yet wired to runtime
   },
+  successful_use_case_pattern: {
+    label: "Successful use case",
+    color: "bg-[#e3f5ee] border-[#a8ddc7] text-[#0c6a4e]",
+    dot:   "bg-[#168f6b]",
+    runtimeUse: "Manager reference and future guidance bias",
+  },
 };
 
 const PROMOTION_THRESHOLDS: Record<string, number> = {
   family_override_preference: 3,
   service_normalization_candidate: 2,
   recurring_blocker_pattern: 3,
+  successful_use_case_pattern: 2,
 };
 
 function PatternContextSummary({ row }: { row: LearningPatternRow }) {
@@ -78,6 +85,17 @@ function PatternContextSummary({ row }: { row: LearningPatternRow }) {
             {" · "}
             <span className="text-[#8b9098]">{c.family}</span>
             {c.service_category ? <span className="ml-1 text-[#8b9098]">· {c.service_category}</span> : null}
+          </span>
+        );
+      }
+      case "successful_use_case_pattern": {
+        const c = ctx as SuccessfulCaseContext;
+        return (
+          <span className="text-[11px] text-[#6b7079]">
+            <span className="font-mono font-semibold text-[#003d5b]">{c.family}</span>
+            {" · "}
+            <span className="text-[#8b9098]">{c.service_category ?? "unknown service"}</span>
+            {c.markets?.length ? <span className="ml-1 text-[#8b9098]">· {c.markets.join(", ")}</span> : null}
           </span>
         );
       }
